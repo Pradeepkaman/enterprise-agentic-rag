@@ -1,0 +1,3852 @@
+{
+  "phase_1": {
+    "OS All Modules Notes.pdf": [
+      {
+        "q": "What is an Operating System and what are its primary roles as an extended machine and resource allocator?",
+        "keywords": [
+          "operating system",
+          "resource",
+          "extended machine"
+        ]
+      },
+      {
+        "q": "Differentiate between Dual-Mode Operation (User Mode vs Kernel Mode) and explain how hardware mode bits protect OS integrity.",
+        "keywords": [
+          "dual-mode",
+          "user mode",
+          "kernel mode",
+          "mode bit"
+        ]
+      },
+      {
+        "q": "What is a System Call and explain the step-by-step mechanism of a software trap transition.",
+        "keywords": [
+          "system call",
+          "trap",
+          "interrupt",
+          "kernel"
+        ]
+      },
+      {
+        "q": "Define a Process and describe the contents of a Process Control Block (PCB).",
+        "keywords": [
+          "pcb",
+          "process control block",
+          "register",
+          "state"
+        ]
+      },
+      {
+        "q": "Explain the Process State Transition model (New, Ready, Running, Waiting, Terminated).",
+        "keywords": [
+          "ready",
+          "running",
+          "waiting",
+          "terminated"
+        ]
+      },
+      {
+        "q": "Compare preemptive versus non-preemptive CPU scheduling algorithms: FCFS, SJF, Priority, and Round Robin.",
+        "keywords": [
+          "preemptive",
+          "fcfs",
+          "sjf",
+          "round robin"
+        ]
+      },
+      {
+        "q": "What is the Critical Section Problem and explain the three requirements: Mutual Exclusion, Progress, and Bounded Waiting.",
+        "keywords": [
+          "critical section",
+          "mutual exclusion",
+          "progress",
+          "bounded waiting"
+        ]
+      },
+      {
+        "q": "Explain Peterson's Solution for two-process mutual exclusion and state its hardware limitations on modern CPUs.",
+        "keywords": [
+          "peterson",
+          "turn",
+          "flag",
+          "mutual exclusion"
+        ]
+      },
+      {
+        "q": "What are Semaphores? Differentiate between Binary Semaphores (Mutexes) and Counting Semaphores.",
+        "keywords": [
+          "semaphore",
+          "wait",
+          "signal",
+          "binary",
+          "counting"
+        ]
+      },
+      {
+        "q": "Define Deadlock and state the four necessary Coffman conditions.",
+        "keywords": [
+          "deadlock",
+          "mutual exclusion",
+          "hold and wait",
+          "no preemption",
+          "circular wait"
+        ]
+      },
+      {
+        "q": "Describe Deadlock Avoidance using Dijkstra's Banker's Algorithm with Allocation, Max, Available, and Need matrices.",
+        "keywords": [
+          "banker",
+          "deadlock avoidance",
+          "safe state",
+          "allocation"
+        ]
+      },
+      {
+        "q": "Explain Paging memory management: Logical vs Physical address translation, Page Tables, and TLB.",
+        "keywords": [
+          "paging",
+          "page table",
+          "tlb",
+          "frame"
+        ]
+      },
+      {
+        "q": "What is Virtual Memory and explain the Demand Paging mechanism and Page Fault handling sequence.",
+        "keywords": [
+          "virtual memory",
+          "demand paging",
+          "page fault"
+        ]
+      },
+      {
+        "q": "Explain Page Replacement Algorithms: FIFO, Optimal (OPT), Least Recently Used (LRU), and Belady's Anomaly.",
+        "keywords": [
+          "fifo",
+          "lru",
+          "belady",
+          "page replacement"
+        ]
+      },
+      {
+        "q": "What is Thrashing and how does the Working Set Model prevent catastrophic CPU utilization collapse?",
+        "keywords": [
+          "thrashing",
+          "working set",
+          "cpu utilization",
+          "page fault"
+        ]
+      }
+    ],
+    "AI module 1.pdf": [
+      {
+        "q": "Define Artificial Intelligence and differentiate the four definitions: thinking humanly, acting humanly, thinking rationally, acting rationally.",
+        "keywords": [
+          "artificial intelligence",
+          "thinking rationally",
+          "acting humanly"
+        ]
+      },
+      {
+        "q": "What is the Turing Test and what are the core capabilities required to pass it?",
+        "keywords": [
+          "turing test",
+          "natural language",
+          "knowledge representation",
+          "reasoning"
+        ]
+      },
+      {
+        "q": "Describe the PEAS framework for an automated taxi driver.",
+        "keywords": [
+          "peas",
+          "performance",
+          "environment",
+          "actuators",
+          "sensors"
+        ]
+      },
+      {
+        "q": "Categorize environments: fully vs partially observable, deterministic vs stochastic, episodic vs sequential.",
+        "keywords": [
+          "observable",
+          "deterministic",
+          "stochastic",
+          "episodic"
+        ]
+      },
+      {
+        "q": "Explain the architecture of a Simple Reflex Agent versus a Goal-Based Agent.",
+        "keywords": [
+          "reflex agent",
+          "goal-based",
+          "condition-action",
+          "state"
+        ]
+      },
+      {
+        "q": "What is a state-space search problem and what are its five components?",
+        "keywords": [
+          "state-space",
+          "initial state",
+          "actions",
+          "goal test",
+          "path cost"
+        ]
+      },
+      {
+        "q": "Explain Breadth-First Search (BFS) and evaluate its completeness, optimality, time, and space complexity.",
+        "keywords": [
+          "bfs",
+          "breadth-first",
+          "fifo",
+          "queue",
+          "completeness"
+        ]
+      },
+      {
+        "q": "Explain Depth-First Search (DFS) and discuss scenarios where it can get trapped in infinite loops.",
+        "keywords": [
+          "dfs",
+          "depth-first",
+          "lifo",
+          "stack",
+          "infinite"
+        ]
+      },
+      {
+        "q": "What is Uniform Cost Search and what optimality condition must it satisfy?",
+        "keywords": [
+          "uniform cost",
+          "dijkstra",
+          "path cost",
+          "g(n)"
+        ]
+      },
+      {
+        "q": "Describe Iterative Deepening Search (IDS) and explain why it combines the advantages of BFS and DFS.",
+        "keywords": [
+          "iterative deepening",
+          "ids",
+          "depth limit",
+          "space complexity"
+        ]
+      }
+    ],
+    "AI module 2.pdf": [
+      {
+        "q": "Define informed (heuristic) search and explain how heuristic functions estimate path costs.",
+        "keywords": [
+          "informed search",
+          "heuristic",
+          "h(n)",
+          "estimate"
+        ]
+      },
+      {
+        "q": "What is Greedy Best-First Search and what is its primary drawback?",
+        "keywords": [
+          "greedy best-first",
+          "heuristic",
+          "incomplete",
+          "suboptimal"
+        ]
+      },
+      {
+        "q": "Explain the A* search algorithm and its evaluation function f(n) = g(n) + h(n).",
+        "keywords": [
+          "a*",
+          "evaluation function",
+          "g(n)",
+          "h(n)"
+        ]
+      },
+      {
+        "q": "Define heuristic admissibility and prove why admissible heuristics guarantee optimality in tree search.",
+        "keywords": [
+          "admissible",
+          "optimality",
+          "never overestimates"
+        ]
+      },
+      {
+        "q": "Define heuristic consistency (monotonicity) and explain why it is required for graph search.",
+        "keywords": [
+          "consistency",
+          "monotonic",
+          "triangle inequality"
+        ]
+      },
+      {
+        "q": "Explain the 8-puzzle problem and compare the Manhattan distance heuristic versus misplaced tiles heuristic.",
+        "keywords": [
+          "8-puzzle",
+          "manhattan distance",
+          "misplaced tiles"
+        ]
+      },
+      {
+        "q": "Describe Hill Climbing search and explain the local maxima, ridges, and plateaux problems.",
+        "keywords": [
+          "hill climbing",
+          "local maxima",
+          "ridges",
+          "plateau"
+        ]
+      },
+      {
+        "q": "What is Simulated Annealing and how does the temperature parameter control probabilistic downhill moves?",
+        "keywords": [
+          "simulated annealing",
+          "temperature",
+          "boltzmann",
+          "cooling"
+        ]
+      },
+      {
+        "q": "Explain Genetic Algorithms: chromosome representation, fitness function, selection, crossover, and mutation.",
+        "keywords": [
+          "genetic algorithm",
+          "fitness",
+          "crossover",
+          "mutation"
+        ]
+      },
+      {
+        "q": "Describe Local Beam Search and explain how it differs from running random-restart hill climbing.",
+        "keywords": [
+          "local beam search",
+          "k states",
+          "parallel",
+          "heuristic"
+        ]
+      }
+    ],
+    "AI module 3.pdf": [
+      {
+        "q": "Define games in AI as multi-agent adversarial search problems.",
+        "keywords": [
+          "adversarial",
+          "game",
+          "utility",
+          "zero-sum"
+        ]
+      },
+      {
+        "q": "Explain the Minimax algorithm and how node values propagate from leaf states.",
+        "keywords": [
+          "minimax",
+          "max",
+          "min",
+          "utility"
+        ]
+      },
+      {
+        "q": "What is Alpha-Beta pruning and how does it optimize Minimax search without altering the final decision?",
+        "keywords": [
+          "alpha-beta",
+          "pruning",
+          "cutoff",
+          "minimax"
+        ]
+      },
+      {
+        "q": "What are the best-case and worst-case time complexities of Alpha-Beta pruning?",
+        "keywords": [
+          "alpha-beta",
+          "complexity",
+          "branching factor",
+          "depth"
+        ]
+      },
+      {
+        "q": "Describe heuristic evaluation functions in game playing and the concept of horizon effect.",
+        "keywords": [
+          "evaluation function",
+          "horizon effect",
+          "quiescence"
+        ]
+      },
+      {
+        "q": "Define a Constraint Satisfaction Problem (CSP) in terms of variables, domains, and constraints.",
+        "keywords": [
+          "csp",
+          "variable",
+          "domain",
+          "constraint"
+        ]
+      },
+      {
+        "q": "Explain Arc Consistency (AC-3 algorithm) and how it detects inconsistencies before search.",
+        "keywords": [
+          "arc consistency",
+          "ac-3",
+          "domain reduction"
+        ]
+      },
+      {
+        "q": "Describe Backtracking search for CSPs and explain the Minimum Remaining Values (MRV) heuristic.",
+        "keywords": [
+          "backtracking",
+          "mrv",
+          "minimum remaining values",
+          "csp"
+        ]
+      },
+      {
+        "q": "Explain the Degree Heuristic and Least Constraining Value (LCV) heuristic in CSP solving.",
+        "keywords": [
+          "degree heuristic",
+          "lcv",
+          "least constraining value"
+        ]
+      },
+      {
+        "q": "Show how the 8-Queens problem or Map Coloring problem is formulated and solved as a CSP.",
+        "keywords": [
+          "8-queens",
+          "map coloring",
+          "constraint",
+          "assignment"
+        ]
+      }
+    ],
+    "AI module 4.pdf": [
+      {
+        "q": "Explain the architecture of a Knowledge-Based Agent and the roles of TELL and ASK operations.",
+        "keywords": [
+          "knowledge-based",
+          "tell",
+          "ask",
+          "inference engine"
+        ]
+      },
+      {
+        "q": "What is the Wumpus World environment and how does an agent use logical inference to navigate safely?",
+        "keywords": [
+          "wumpus world",
+          "stench",
+          "breeze",
+          "pit",
+          "gold"
+        ]
+      },
+      {
+        "q": "Differentiate between syntax, semantics, and entailment in formal logic.",
+        "keywords": [
+          "syntax",
+          "semantics",
+          "entailment",
+          "models"
+        ]
+      },
+      {
+        "q": "Define Propositional Logic: propositional symbols, connectives, and truth table semantics.",
+        "keywords": [
+          "propositional logic",
+          "connectives",
+          "truth table",
+          "conjunction"
+        ]
+      },
+      {
+        "q": "Explain logical equivalences: De Morgan's laws, contraposition, and distribution rules.",
+        "keywords": [
+          "de morgan",
+          "contraposition",
+          "equivalence",
+          "negation"
+        ]
+      },
+      {
+        "q": "What is Conjunctive Normal Form (CNF) and what are the steps to convert propositional formulas to CNF?",
+        "keywords": [
+          "cnf",
+          "conjunctive normal form",
+          "clause",
+          "conjunction"
+        ]
+      },
+      {
+        "q": "Explain the Propositional Resolution inference rule and how resolution refutation proves unsatisfiability.",
+        "keywords": [
+          "resolution",
+          "refutation",
+          "empty clause",
+          "contradiction"
+        ]
+      },
+      {
+        "q": "Describe the Forward Chaining algorithm for definite clauses and its data-driven reasoning mechanism.",
+        "keywords": [
+          "forward chaining",
+          "definite clause",
+          "data-driven",
+          "modus ponens"
+        ]
+      },
+      {
+        "q": "Describe the Backward Chaining algorithm and its goal-directed reasoning mechanism.",
+        "keywords": [
+          "backward chaining",
+          "goal-directed",
+          "subgoals"
+        ]
+      },
+      {
+        "q": "Explain First-Order Logic (FOL): terms, predicates, universal quantifiers, and existential quantifiers.",
+        "keywords": [
+          "first-order logic",
+          "predicate",
+          "quantifier",
+          "universal",
+          "existential"
+        ]
+      }
+    ],
+    "AI module 5.pdf": [
+      {
+        "q": "What is Classical Planning in AI and why are standard search algorithms inefficient for long action plans?",
+        "keywords": [
+          "classical planning",
+          "action",
+          "state",
+          "goal"
+        ]
+      },
+      {
+        "q": "Describe the STRIPS representation language: preconditions, add lists, and delete lists.",
+        "keywords": [
+          "strips",
+          "precondition",
+          "add list",
+          "delete list"
+        ]
+      },
+      {
+        "q": "What is PDDL (Planning Domain Definition Language) and how does it separate domain actions from problem instances?",
+        "keywords": [
+          "pddl",
+          "domain",
+          "problem",
+          "action"
+        ]
+      },
+      {
+        "q": "Explain Forward State-Space Search (Progression) versus Backward Search (Regression) in planning.",
+        "keywords": [
+          "progression",
+          "regression",
+          "forward search",
+          "backward search"
+        ]
+      },
+      {
+        "q": "What is a Planning Graph and how does it compute mutual exclusion (mutex) relationships?",
+        "keywords": [
+          "planning graph",
+          "mutex",
+          "inconsistent effects",
+          "competing needs"
+        ]
+      },
+      {
+        "q": "Why is handling uncertainty essential in real-world AI reasoning?",
+        "keywords": [
+          "uncertainty",
+          "probability",
+          "qualification problem",
+          "ignorance"
+        ]
+      },
+      {
+        "q": "State Bayes' Rule and explain prior probability, posterior probability, and likelihood.",
+        "keywords": [
+          "bayes",
+          "prior",
+          "posterior",
+          "likelihood"
+        ]
+      },
+      {
+        "q": "What is a Bayesian Belief Network (BBN) and how does it represent conditional independence?",
+        "keywords": [
+          "bayesian network",
+          "dag",
+          "conditional independence",
+          "cpt"
+        ]
+      },
+      {
+        "q": "Explain how conditional probability tables (CPTs) are constructed for nodes in a Bayesian Network.",
+        "keywords": [
+          "cpt",
+          "conditional probability table",
+          "parents",
+          "probabilities"
+        ]
+      },
+      {
+        "q": "Describe exact inference in Bayesian Networks by enumeration and its computational complexity.",
+        "keywords": [
+          "inference",
+          "enumeration",
+          "marginalization",
+          "bayesian"
+        ]
+      }
+    ],
+    "ML module 1.pdf": [
+      {
+        "q": "Define Machine Learning and state Mitchell's definition (E, T, P).",
+        "keywords": [
+          "machine learning",
+          "mitchell",
+          "experience",
+          "task",
+          "performance"
+        ]
+      },
+      {
+        "q": "Differentiate Supervised Learning, Unsupervised Learning, and Reinforcement Learning.",
+        "keywords": [
+          "supervised",
+          "unsupervised",
+          "reinforcement",
+          "reward",
+          "labels"
+        ]
+      },
+      {
+        "q": "What is Concept Learning and how is it modeled as a search through a hypothesis space?",
+        "keywords": [
+          "concept learning",
+          "hypothesis space",
+          "boolean-valued"
+        ]
+      },
+      {
+        "q": "Define the General-to-Specific ordering of hypotheses.",
+        "keywords": [
+          "general",
+          "specific",
+          "ordering",
+          "more-general"
+        ]
+      },
+      {
+        "q": "Explain the Find-S algorithm and show how it derives a maximally specific hypothesis from positive training instances.",
+        "keywords": [
+          "find-s",
+          "maximally specific",
+          "positive instances"
+        ]
+      },
+      {
+        "q": "What are the major limitations of Find-S?",
+        "keywords": [
+          "find-s",
+          "limitations",
+          "inconsistent",
+          "negative examples"
+        ]
+      },
+      {
+        "q": "Explain the Version Space and how it represents all hypotheses consistent with training examples.",
+        "keywords": [
+          "version space",
+          "consistent",
+          "boundary"
+        ]
+      },
+      {
+        "q": "Describe the Candidate Elimination algorithm and the update rules for General boundary (G) and Specific boundary (S).",
+        "keywords": [
+          "candidate elimination",
+          "general boundary",
+          "specific boundary",
+          "g",
+          "s"
+        ]
+      },
+      {
+        "q": "What is an Inductive Bias and why is an unbiased learner unable to make useful generalizations?",
+        "keywords": [
+          "inductive bias",
+          "unbiased learner",
+          "generalization"
+        ]
+      },
+      {
+        "q": "Explain how Candidate Elimination handles negative training examples to specialize G.",
+        "keywords": [
+          "candidate elimination",
+          "negative instances",
+          "specialize",
+          "g"
+        ]
+      }
+    ],
+    "ML module 2.pdf": [
+      {
+        "q": "What is a Decision Tree and what do internal nodes, branches, and leaf nodes represent?",
+        "keywords": [
+          "decision tree",
+          "internal node",
+          "branch",
+          "leaf node"
+        ]
+      },
+      {
+        "q": "What types of problems are best suited for Decision Tree learning?",
+        "keywords": [
+          "decision tree",
+          "attribute-value",
+          "discrete",
+          "classification"
+        ]
+      },
+      {
+        "q": "Define Entropy in information theory and state its mathematical equation.",
+        "keywords": [
+          "entropy",
+          "information theory",
+          "probability",
+          "log"
+        ]
+      },
+      {
+        "q": "Define Information Gain and explain how it measures expected reduction in entropy.",
+        "keywords": [
+          "information gain",
+          "entropy",
+          "reduction",
+          "attribute"
+        ]
+      },
+      {
+        "q": "Describe the ID3 algorithm step-by-step.",
+        "keywords": [
+          "id3",
+          "information gain",
+          "entropy",
+          "root"
+        ]
+      },
+      {
+        "q": "What is the inductive bias of decision tree algorithms?",
+        "keywords": [
+          "inductive bias",
+          "shorter trees",
+          "information gain"
+        ]
+      },
+      {
+        "q": "Explain Overfitting in decision trees and describe Pre-pruning versus Post-pruning.",
+        "keywords": [
+          "overfitting",
+          "pruning",
+          "pre-pruning",
+          "post-pruning"
+        ]
+      },
+      {
+        "q": "What is Gain Ratio and why does C4.5 use it to prevent bias toward attributes with many distinct values?",
+        "keywords": [
+          "gain ratio",
+          "c4.5",
+          "split information",
+          "bias"
+        ]
+      },
+      {
+        "q": "How are continuous-valued attributes incorporated into decision tree split criteria?",
+        "keywords": [
+          "continuous",
+          "threshold",
+          "split",
+          "decision tree"
+        ]
+      },
+      {
+        "q": "How do decision trees handle missing attribute values in training instances?",
+        "keywords": [
+          "missing values",
+          "probability",
+          "mode",
+          "decision tree"
+        ]
+      }
+    ],
+    "ML module 3.pdf": [
+      {
+        "q": "Describe the Perceptron training rule and its convergence guarantee for linearly separable data.",
+        "keywords": [
+          "perceptron",
+          "convergence",
+          "linearly separable",
+          "weight update"
+        ]
+      },
+      {
+        "q": "What is Gradient Descent and how does it minimize the sum of squared errors cost function?",
+        "keywords": [
+          "gradient descent",
+          "squared errors",
+          "learning rate",
+          "derivative"
+        ]
+      },
+      {
+        "q": "What is Delta Rule (Adaline rule) and how does it differ from the Perceptron training rule?",
+        "keywords": [
+          "delta rule",
+          "adaline",
+          "continuous",
+          "linear"
+        ]
+      },
+      {
+        "q": "Explain the difference between Batch Gradient Descent, Stochastic Gradient Descent, and Mini-batch GD.",
+        "keywords": [
+          "batch",
+          "stochastic",
+          "mini-batch",
+          "epoch"
+        ]
+      },
+      {
+        "q": "Why are linear threshold units unable to learn non-linear decision boundaries like XOR?",
+        "keywords": [
+          "linear threshold",
+          "xor",
+          "non-linear",
+          "hyperplane"
+        ]
+      },
+      {
+        "q": "Derive the weight update rule for a Sigmoid unit using calculus.",
+        "keywords": [
+          "sigmoid",
+          "derivative",
+          "chain rule",
+          "weight update"
+        ]
+      },
+      {
+        "q": "Explain the Multi-Layer Feedforward network architecture and the Backpropagation algorithm.",
+        "keywords": [
+          "multi-layer",
+          "feedforward",
+          "backpropagation",
+          "hidden layer"
+        ]
+      },
+      {
+        "q": "What is the role of learning rate (eta) and how does it affect convergence?",
+        "keywords": [
+          "learning rate",
+          "convergence",
+          "oscillations",
+          "step size"
+        ]
+      },
+      {
+        "q": "How does adding a Momentum term to backpropagation prevent oscillations in error valleys?",
+        "keywords": [
+          "momentum",
+          "oscillations",
+          "local minima",
+          "gradient"
+        ]
+      },
+      {
+        "q": "Explain the generalization capabilities of neural networks and how validation sets guide early stopping.",
+        "keywords": [
+          "generalization",
+          "validation set",
+          "early stopping",
+          "overfitting"
+        ]
+      }
+    ],
+    "ML module 4.pdf": [
+      {
+        "q": "State Bayes' Theorem and define Prior Probability, Likelihood, Marginal Probability, and Posterior Probability.",
+        "keywords": [
+          "bayes",
+          "prior",
+          "posterior",
+          "likelihood"
+        ]
+      },
+      {
+        "q": "What is Maximum A Posteriori (MAP) hypothesis and Maximum Likelihood (ML) hypothesis?",
+        "keywords": [
+          "map",
+          "maximum a posteriori",
+          "maximum likelihood",
+          "hypothesis"
+        ]
+      },
+      {
+        "q": "Derive the Naive Bayes Classifier equation from Bayes' theorem.",
+        "keywords": [
+          "naive bayes",
+          "classifier",
+          "conditional independence",
+          "argmax"
+        ]
+      },
+      {
+        "q": "Explain the conditional independence assumption in Naive Bayes.",
+        "keywords": [
+          "conditional independence",
+          "naive",
+          "product",
+          "features"
+        ]
+      },
+      {
+        "q": "What is the zero-frequency problem in Naive Bayes and how does Laplace Smoothing resolve it?",
+        "keywords": [
+          "zero-frequency",
+          "laplace smoothing",
+          "add-1",
+          "probability"
+        ]
+      },
+      {
+        "q": "Describe the Minimum Description Length (MDL) principle and its relation to Occam's Razor.",
+        "keywords": [
+          "mdl",
+          "minimum description length",
+          "occam's razor",
+          "compression"
+        ]
+      },
+      {
+        "q": "What is a Bayesian Belief Network and how does it model directed acyclic dependencies?",
+        "keywords": [
+          "bayesian belief network",
+          "dag",
+          "dependencies",
+          "conditional"
+        ]
+      },
+      {
+        "q": "Explain the Concept of d-separation and conditional independence in Bayesian Networks.",
+        "keywords": [
+          "d-separation",
+          "conditional independence",
+          "blocking",
+          "path"
+        ]
+      },
+      {
+        "q": "What is the Expectation-Maximization (EM) algorithm and when is it applied to incomplete data?",
+        "keywords": [
+          "em algorithm",
+          "expectation",
+          "maximization",
+          "hidden variables"
+        ]
+      },
+      {
+        "q": "How does Naive Bayes perform text classification using Bag-of-Words features?",
+        "keywords": [
+          "text classification",
+          "bag-of-words",
+          "naive bayes",
+          "vocabulary"
+        ]
+      }
+    ],
+    "ML module 5.pdf": [
+      {
+        "q": "What is Instance-Based Learning (Lazy Learning) and how does it differ from Eager Learning?",
+        "keywords": [
+          "instance-based",
+          "lazy learning",
+          "eager learning",
+          "training phase"
+        ]
+      },
+      {
+        "q": "Explain the K-Nearest Neighbors (KNN) algorithm for classification and regression.",
+        "keywords": [
+          "knn",
+          "k-nearest neighbors",
+          "majority vote",
+          "distance"
+        ]
+      },
+      {
+        "q": "What distance metrics (Euclidean, Manhattan, Minkowski) are commonly used in KNN?",
+        "keywords": [
+          "euclidean",
+          "manhattan",
+          "distance",
+          "minkowski"
+        ]
+      },
+      {
+        "q": "What is the Curse of Dimensionality and how does it impact distance metrics in high-dimensional feature spaces?",
+        "keywords": [
+          "curse of dimensionality",
+          "distance",
+          "high-dimensional",
+          "sparse"
+        ]
+      },
+      {
+        "q": "Explain Distance-Weighted KNN and how it prevents distant neighbors from corrupting classification.",
+        "keywords": [
+          "distance-weighted",
+          "inverse distance",
+          "weight",
+          "knn"
+        ]
+      },
+      {
+        "q": "What are Radial Basis Function (RBF) networks and how do localized kernel functions map inputs?",
+        "keywords": [
+          "rbf",
+          "radial basis",
+          "gaussian",
+          "kernel"
+        ]
+      },
+      {
+        "q": "Explain Case-Based Reasoning (CBR) and its four-step cycle (Retrieve, Reuse, Revise, Retain).",
+        "keywords": [
+          "case-based reasoning",
+          "cbr",
+          "retrieve",
+          "reuse",
+          "revise",
+          "retain"
+        ]
+      },
+      {
+        "q": "Define Confusion Matrix metrics: True Positive, False Positive, Precision, Recall, and F1-Score.",
+        "keywords": [
+          "precision",
+          "recall",
+          "f1-score",
+          "confusion matrix"
+        ]
+      },
+      {
+        "q": "Explain ROC (Receiver Operating Characteristic) curve and AUC (Area Under Curve).",
+        "keywords": [
+          "roc",
+          "auc",
+          "true positive rate",
+          "false positive rate"
+        ]
+      },
+      {
+        "q": "Explain K-Fold Cross Validation and the Bias-Variance Tradeoff.",
+        "keywords": [
+          "k-fold",
+          "cross-validation",
+          "bias",
+          "variance",
+          "tradeoff"
+        ]
+      }
+    ]
+  },
+  "phase_2": {
+    "ADA M-1.pdf": [
+      {
+        "q": "What is an algorithm and what are the essential criteria (definiteness, finiteness, etc.) it must satisfy?",
+        "keywords": [
+          "algorithm",
+          "essential",
+          "criteria",
+          "definiteness"
+        ]
+      },
+      {
+        "q": "Explain the asymptotic notations: Big-O (O), Big-Omega (\\Omega), and Big-Theta (\\Theta).",
+        "keywords": [
+          "asymptotic",
+          "notations",
+          "big-o",
+          "o"
+        ]
+      },
+      {
+        "q": "What is the difference between best-case, worst-case, and average-case time complexities?",
+        "keywords": [
+          "best-case",
+          "worst-case",
+          "average-case",
+          "time"
+        ]
+      },
+      {
+        "q": "How do you set up and solve recurrence relations for recursive algorithms?",
+        "keywords": [
+          "solve",
+          "recurrence",
+          "relations",
+          "recursive"
+        ]
+      },
+      {
+        "q": "State and explain the Master Theorem with its three standard cases.",
+        "keywords": [
+          "master",
+          "theorem",
+          "three",
+          "standard"
+        ]
+      },
+      {
+        "q": "Describe the divide-and-conquer paradigm and its general algorithmic structure.",
+        "keywords": [
+          "divide-and-conquer",
+          "paradigm",
+          "general",
+          "algorithmic"
+        ]
+      },
+      {
+        "q": "Explain the Merge Sort algorithm and analyze its time and space complexity.",
+        "keywords": [
+          "merge",
+          "sort",
+          "algorithm",
+          "analyze"
+        ]
+      },
+      {
+        "q": "Describe Quick Sort, its partitioning algorithm, and explain when its worst-case O(n^2) behavior occurs.",
+        "keywords": [
+          "quick",
+          "sort",
+          "partitioning",
+          "algorithm"
+        ]
+      },
+      {
+        "q": "How can random pivot selection optimize Quick Sort performance?",
+        "keywords": [
+          "random",
+          "pivot",
+          "selection",
+          "optimize"
+        ]
+      },
+      {
+        "q": "What is the fundamental difference between an algorithm's time complexity and space complexity?",
+        "keywords": [
+          "fundamental",
+          "algorithms",
+          "time",
+          "complexity"
+        ]
+      }
+    ],
+    "ADA M-2.pdf": [
+      {
+        "q": "Explain the decrease-and-conquer strategy and differentiate decrease-by-a-constant versus decrease-by-a-factor.",
+        "keywords": [
+          "decrease-and-conquer",
+          "strategy",
+          "decrease-by-a-constant",
+          "versus"
+        ]
+      },
+      {
+        "q": "How does Insertion Sort work and what is its worst-case comparison count?",
+        "keywords": [
+          "insertion",
+          "sort",
+          "work",
+          "worst-case"
+        ]
+      },
+      {
+        "q": "Explain Depth-First Search (DFS) on graphs and how DFS trees are used to detect cycles.",
+        "keywords": [
+          "depth-first",
+          "search",
+          "dfs",
+          "graphs"
+        ]
+      },
+      {
+        "q": "Describe Breadth-First Search (BFS) and explain how it identifies shortest paths in unweighted graphs.",
+        "keywords": [
+          "breadth-first",
+          "search",
+          "bfs",
+          "identifies"
+        ]
+      },
+      {
+        "q": "What is topological sorting and what are the two algorithms (DFS-based vs Source Removal) to compute it?",
+        "keywords": [
+          "topological",
+          "sorting",
+          "algorithms",
+          "dfs-based"
+        ]
+      },
+      {
+        "q": "Explain the transform-and-conquer strategy with an example like instance simplification.",
+        "keywords": [
+          "transform-and-conquer",
+          "strategy",
+          "example",
+          "like"
+        ]
+      },
+      {
+        "q": "Describe balanced search trees and explain how 2-3 trees maintain balance during insertions.",
+        "keywords": [
+          "balanced",
+          "search",
+          "trees",
+          "trees"
+        ]
+      },
+      {
+        "q": "What is a binary heap and how does the bottom-up heap construction algorithm work?",
+        "keywords": [
+          "binary",
+          "heap",
+          "bottom-up",
+          "heap"
+        ]
+      },
+      {
+        "q": "Explain Heap Sort step-by-step and show why its time complexity is O(n \\log n).",
+        "keywords": [
+          "heap",
+          "sort",
+          "step-by-step",
+          "time"
+        ]
+      },
+      {
+        "q": "Describe Horner's rule for polynomial evaluation and explain why it is computationally efficient.",
+        "keywords": [
+          "horners",
+          "rule",
+          "polynomial",
+          "evaluation"
+        ]
+      }
+    ],
+    "ADA M-3.pdf": [
+      {
+        "q": "Explain the concept of space-time tradeoffs in algorithm design.",
+        "keywords": [
+          "concept",
+          "space-time",
+          "tradeoffs",
+          "algorithm"
+        ]
+      },
+      {
+        "q": "What is Horspool's string matching algorithm and how is the shift table constructed?",
+        "keywords": [
+          "horspools",
+          "string",
+          "matching",
+          "algorithm"
+        ]
+      },
+      {
+        "q": "Explain hashing and describe collision resolution strategies: open addressing vs separate chaining.",
+        "keywords": [
+          "hashing",
+          "collision",
+          "resolution",
+          "strategies"
+        ]
+      },
+      {
+        "q": "What is dynamic programming and what are its two core properties: optimal substructure and overlapping subproblems?",
+        "keywords": [
+          "dynamic",
+          "programming",
+          "core",
+          "properties"
+        ]
+      },
+      {
+        "q": "How does Warshall's algorithm compute the transitive closure of a directed graph?",
+        "keywords": [
+          "warshalls",
+          "algorithm",
+          "compute",
+          "transitive"
+        ]
+      },
+      {
+        "q": "Describe Floyd's algorithm for all-pairs shortest paths and write its recurrence relation.",
+        "keywords": [
+          "floyds",
+          "algorithm",
+          "all-pairs",
+          "shortest"
+        ]
+      },
+      {
+        "q": "Explain the 0/1 Knapsack problem using dynamic programming and write its recurrence table formula.",
+        "keywords": [
+          "knapsack",
+          "problem",
+          "dynamic",
+          "programming"
+        ]
+      },
+      {
+        "q": "Differentiate between top-down memoization and bottom-up dynamic programming.",
+        "keywords": [
+          "top-down",
+          "memoization",
+          "bottom-up",
+          "dynamic"
+        ]
+      },
+      {
+        "q": "What is the Matrix Chain Multiplication problem and how does dynamic programming determine optimal parenthesization?",
+        "keywords": [
+          "matrix",
+          "chain",
+          "multiplication",
+          "problem"
+        ]
+      },
+      {
+        "q": "Describe the Longest Common Subsequence (LCS) problem and its dynamic programming formulation.",
+        "keywords": [
+          "longest",
+          "common",
+          "subsequence",
+          "lcs"
+        ]
+      }
+    ],
+    "ADA M-4.pdf": [
+      {
+        "q": "Define the greedy algorithm paradigm and explain the greedy-choice property.",
+        "keywords": [
+          "greedy",
+          "algorithm",
+          "paradigm",
+          "greedy-choice"
+        ]
+      },
+      {
+        "q": "What is a Minimum Spanning Tree (MST) and what are its fundamental graph properties?",
+        "keywords": [
+          "minimum",
+          "spanning",
+          "tree",
+          "mst"
+        ]
+      },
+      {
+        "q": "Explain Prim's algorithm for finding an MST and state its time complexity.",
+        "keywords": [
+          "prims",
+          "algorithm",
+          "finding",
+          "time"
+        ]
+      },
+      {
+        "q": "Describe Kruskal's algorithm for finding an MST and explain the role of the Disjoint Set Union (DSU) data structure.",
+        "keywords": [
+          "kruskals",
+          "algorithm",
+          "finding",
+          "disjoint"
+        ]
+      },
+      {
+        "q": "Explain Dijkstra's single-source shortest path algorithm and why it fails with negative edge weights.",
+        "keywords": [
+          "dijkstras",
+          "single-source",
+          "shortest",
+          "path"
+        ]
+      },
+      {
+        "q": "Describe Huffman coding and explain how prefix-free variable-length codes achieve lossless data compression.",
+        "keywords": [
+          "huffman",
+          "coding",
+          "prefix-free",
+          "variable-length"
+        ]
+      },
+      {
+        "q": "What is the Fractional Knapsack problem and why can it be solved greedily whereas 0/1 Knapsack cannot?",
+        "keywords": [
+          "fractional",
+          "knapsack",
+          "problem",
+          "solved"
+        ]
+      },
+      {
+        "q": "Explain the Job Sequencing with Deadlines problem and the greedy heuristic used to maximize profit.",
+        "keywords": [
+          "sequencing",
+          "deadlines",
+          "problem",
+          "greedy"
+        ]
+      },
+      {
+        "q": "Differentiate between Prim's algorithm and Kruskal's algorithm in terms of sparse versus dense graph efficiency.",
+        "keywords": [
+          "prims",
+          "algorithm",
+          "kruskals",
+          "algorithm"
+        ]
+      },
+      {
+        "q": "What is matroid theory and how does it relate to the correctness of greedy algorithms?",
+        "keywords": [
+          "matroid",
+          "theory",
+          "relate",
+          "correctness"
+        ]
+      }
+    ],
+    "ADA M-5.pdf": [
+      {
+        "q": "Define the complexity classes: P, NP, NP-Complete, and NP-Hard.",
+        "keywords": [
+          "complexity",
+          "classes",
+          "np-complete",
+          "np-hard"
+        ]
+      },
+      {
+        "q": "Explain the concept of polynomial-time reduction in the context of NP-Completeness.",
+        "keywords": [
+          "concept",
+          "polynomial-time",
+          "reduction",
+          "context"
+        ]
+      },
+      {
+        "q": "State Cook's Theorem and its significance in computational complexity.",
+        "keywords": [
+          "cooks",
+          "theorem",
+          "significance",
+          "computational"
+        ]
+      },
+      {
+        "q": "What is backtracking and how does it traverse a state-space tree?",
+        "keywords": [
+          "backtracking",
+          "traverse",
+          "state-space",
+          "tree"
+        ]
+      },
+      {
+        "q": "Explain the N-Queens problem and how backtracking prunes illegal board configurations.",
+        "keywords": [
+          "n-queens",
+          "problem",
+          "backtracking",
+          "prunes"
+        ]
+      },
+      {
+        "q": "Describe the Subset Sum problem and show how backtracking explores valid combinations.",
+        "keywords": [
+          "subset",
+          "problem",
+          "backtracking",
+          "explores"
+        ]
+      },
+      {
+        "q": "Explain the Hamiltonian Circuit problem and how backtracking finds valid cycles.",
+        "keywords": [
+          "hamiltonian",
+          "circuit",
+          "problem",
+          "backtracking"
+        ]
+      },
+      {
+        "q": "What is the branch-and-bound technique and how does it differ fundamentally from backtracking?",
+        "keywords": [
+          "branch-and-bound",
+          "technique",
+          "differ",
+          "fundamentally"
+        ]
+      },
+      {
+        "q": "Explain how branch-and-bound solves the Assignment Problem using lower-bound estimates.",
+        "keywords": [
+          "branch-and-bound",
+          "solves",
+          "assignment",
+          "problem"
+        ]
+      },
+      {
+        "q": "Describe the Traveling Salesperson Problem (TSP) and how branch-and-bound finds the optimal tour.",
+        "keywords": [
+          "traveling",
+          "salesperson",
+          "problem",
+          "tsp"
+        ]
+      }
+    ],
+    "CN-module-1.pdf": [
+      {
+        "q": "What is a computer network and what are the primary network topologies (Bus, Star, Ring, Mesh)?",
+        "keywords": [
+          "computer",
+          "network",
+          "network",
+          "topologies"
+        ]
+      },
+      {
+        "q": "Differentiate between LAN, MAN, WAN, and PAN networks.",
+        "keywords": [
+          "lan",
+          "man",
+          "wan",
+          "networks"
+        ]
+      },
+      {
+        "q": "Explain the 7 layers of the OSI Reference Model and list the primary responsibility of each layer.",
+        "keywords": [
+          "layers",
+          "reference",
+          "model",
+          "list"
+        ]
+      },
+      {
+        "q": "Compare the OSI model with the TCP/IP 4-layer model.",
+        "keywords": [
+          "model",
+          "tcpip",
+          "4-layer",
+          "model"
+        ]
+      },
+      {
+        "q": "Explain guided transmission media (twisted pair, coaxial cable, optical fiber) and their attenuation characteristics.",
+        "keywords": [
+          "guided",
+          "transmission",
+          "media",
+          "twisted"
+        ]
+      },
+      {
+        "q": "Explain unguided transmission media (radio waves, microwaves, infrared).",
+        "keywords": [
+          "unguided",
+          "transmission",
+          "media",
+          "radio"
+        ]
+      },
+      {
+        "q": "Describe transmission impairment causes: attenuation, distortion, and noise.",
+        "keywords": [
+          "transmission",
+          "impairment",
+          "causes",
+          "attenuation"
+        ]
+      },
+      {
+        "q": "State the Nyquist Bit Rate formula and Shannon Channel Capacity formula.",
+        "keywords": [
+          "nyquist",
+          "rate",
+          "formula",
+          "shannon"
+        ]
+      },
+      {
+        "q": "Explain circuit switching versus packet switching (virtual circuits vs datagrams).",
+        "keywords": [
+          "circuit",
+          "switching",
+          "versus",
+          "packet"
+        ]
+      },
+      {
+        "q": "What is multiplexing and differentiate FDM (Frequency Division), TDM (Time Division), and WDM (Wavelength Division)?",
+        "keywords": [
+          "multiplexing",
+          "frequency",
+          "division",
+          "time"
+        ]
+      }
+    ],
+    "CN-module-2.pdf": [
+      {
+        "q": "What are the core services provided by the Data Link Layer (framing, flow control, error control)?",
+        "keywords": [
+          "core",
+          "services",
+          "provided",
+          "data"
+        ]
+      },
+      {
+        "q": "Explain byte-stuffing and bit-stuffing framing methods with examples.",
+        "keywords": [
+          "byte-stuffing",
+          "bit-stuffing",
+          "framing",
+          "methods"
+        ]
+      },
+      {
+        "q": "Differentiate between single-bit errors and burst errors.",
+        "keywords": [
+          "single-bit",
+          "errors",
+          "burst",
+          "errors"
+        ]
+      },
+      {
+        "q": "Explain Cyclic Redundancy Check (CRC) error detection using polynomial division.",
+        "keywords": [
+          "cyclic",
+          "redundancy",
+          "check",
+          "crc"
+        ]
+      },
+      {
+        "q": "Describe Internet Checksum computation and verification.",
+        "keywords": [
+          "internet",
+          "checksum",
+          "computation",
+          "verification"
+        ]
+      },
+      {
+        "q": "What is the Stop-and-Wait ARQ protocol and what causes sender deadlock?",
+        "keywords": [
+          "stop-and-wait",
+          "protocol",
+          "causes",
+          "sender"
+        ]
+      },
+      {
+        "q": "Explain the Go-Back-N (GBN) sliding window protocol and the sender window size constraint.",
+        "keywords": [
+          "go-back-n",
+          "gbn",
+          "sliding",
+          "window"
+        ]
+      },
+      {
+        "q": "Explain the Selective Repeat (SR) protocol and explain why its sender and receiver window sizes must satisfy W \\le 2^{m-1}.",
+        "keywords": [
+          "selective",
+          "repeat",
+          "sr",
+          "protocol"
+        ]
+      },
+      {
+        "q": "What is piggybacking in bidirectional sliding window protocols?",
+        "keywords": [
+          "piggybacking",
+          "bidirectional",
+          "sliding",
+          "window"
+        ]
+      },
+      {
+        "q": "Describe High-Level Data Link Control (HDLC) protocol frame format and operational modes.",
+        "keywords": [
+          "high-level",
+          "data",
+          "link",
+          "control"
+        ]
+      }
+    ],
+    "CN-module-3.pdf": [
+      {
+        "q": "What is the Multiple Access problem and why is MAC sublayer required in broadcast channels?",
+        "keywords": [
+          "multiple",
+          "access",
+          "problem",
+          "sublayer"
+        ]
+      },
+      {
+        "q": "Compare Pure ALOHA and Slotted ALOHA in terms of vulnerable period and maximum theoretical throughput.",
+        "keywords": [
+          "pure",
+          "aloha",
+          "slotted",
+          "aloha"
+        ]
+      },
+      {
+        "q": "Explain Carrier Sense Multiple Access (CSMA) and differentiate 1-persistent, non-persistent, and p-persistent CSMA.",
+        "keywords": [
+          "carrier",
+          "sense",
+          "multiple",
+          "access"
+        ]
+      },
+      {
+        "q": "Describe CSMA/CD (Collision Detection) used in wired Ethernet and how collision detection restricts minimum frame size.",
+        "keywords": [
+          "csmacd",
+          "collision",
+          "detection",
+          "used"
+        ]
+      },
+      {
+        "q": "Explain the Binary Exponential Backoff algorithm used in CSMA/CD.",
+        "keywords": [
+          "binary",
+          "exponential",
+          "backoff",
+          "algorithm"
+        ]
+      },
+      {
+        "q": "Describe CSMA/CA (Collision Avoidance) used in wireless 802.11 networks and the role of RTS/CTS handshaking.",
+        "keywords": [
+          "csmaca",
+          "collision",
+          "avoidance",
+          "used"
+        ]
+      },
+      {
+        "q": "Explain the Hidden Terminal Problem and Exposed Terminal Problem in wireless networks.",
+        "keywords": [
+          "hidden",
+          "terminal",
+          "problem",
+          "exposed"
+        ]
+      },
+      {
+        "q": "What is standard Ethernet (IEEE 802.3) and describe the Ethernet frame format (preamble, MAC addresses, type, payload, FCS).",
+        "keywords": [
+          "standard",
+          "ethernet",
+          "ieee",
+          "8023"
+        ]
+      },
+      {
+        "q": "Explain the working of network switches and transparent bridge self-learning table algorithm.",
+        "keywords": [
+          "working",
+          "network",
+          "switches",
+          "transparent"
+        ]
+      },
+      {
+        "q": "What is a Virtual LAN (VLAN) and how does IEEE 802.1Q frame tagging isolate broadcast domains?",
+        "keywords": [
+          "virtual",
+          "vlan",
+          "ieee",
+          "8021q"
+        ]
+      }
+    ],
+    "CN-module-4.pdf": [
+      {
+        "q": "What are the key functions of the Network Layer (packetizing, routing, forwarding)?",
+        "keywords": [
+          "functions",
+          "network",
+          "layer",
+          "packetizing"
+        ]
+      },
+      {
+        "q": "Describe IPv4 header format: TTL, Protocol, Header Checksum, Fragmentation offsets (Flags, Fragment Offset).",
+        "keywords": [
+          "ipv4",
+          "header",
+          "format",
+          "ttl"
+        ]
+      },
+      {
+        "q": "Explain Classful IP addressing (Classes A, B, C, D, E) and explain why CIDR (Classless Inter-Domain Routing) replaced it.",
+        "keywords": [
+          "classful",
+          "addressing",
+          "classes",
+          "cidr"
+        ]
+      },
+      {
+        "q": "What is subnetting and how is a subnet mask used to compute Network ID, Host ID, and Directed Broadcast Address?",
+        "keywords": [
+          "subnetting",
+          "subnet",
+          "mask",
+          "used"
+        ]
+      },
+      {
+        "q": "Explain Network Address Translation (NAT) and differentiate static NAT, dynamic NAT, and PAT (Port Address Translation).",
+        "keywords": [
+          "network",
+          "address",
+          "translation",
+          "nat"
+        ]
+      },
+      {
+        "q": "Compare IPv4 with IPv6: address length, header simplicity, elimination of checksum, and autoconfiguration.",
+        "keywords": [
+          "ipv4",
+          "ipv6",
+          "address",
+          "length"
+        ]
+      },
+      {
+        "q": "Explain the Distance Vector Routing algorithm (Bellman-Ford) and the Count-to-Infinity problem with Split Horizon solution.",
+        "keywords": [
+          "distance",
+          "vector",
+          "routing",
+          "algorithm"
+        ]
+      },
+      {
+        "q": "Explain Link State Routing (Dijkstra's algorithm) and how Link State Advertisements (LSAs) build global network topology.",
+        "keywords": [
+          "link",
+          "routing",
+          "dijkstras",
+          "algorithm"
+        ]
+      },
+      {
+        "q": "What is Hierarchical Routing and why is it necessary for large Autonomous Systems?",
+        "keywords": [
+          "hierarchical",
+          "routing",
+          "necessary",
+          "large"
+        ]
+      },
+      {
+        "q": "Describe Address Resolution Protocol (ARP) and explain how an IP address is resolved to a MAC address.",
+        "keywords": [
+          "address",
+          "resolution",
+          "protocol",
+          "arp"
+        ]
+      }
+    ],
+    "CN-module-5.pdf": [
+      {
+        "q": "What are the differences between process-to-process communication in Transport Layer vs host-to-host in Network Layer?",
+        "keywords": [
+          "differences",
+          "process-to-process",
+          "communication",
+          "transport"
+        ]
+      },
+      {
+        "q": "Compare TCP (Transmission Control Protocol) and UDP (User Datagram Protocol) across reliability, overhead, and state.",
+        "keywords": [
+          "transmission",
+          "control",
+          "protocol",
+          "user"
+        ]
+      },
+      {
+        "q": "Describe the TCP segment header: sequence number, acknowledgment number, window size, flags (SYN, ACK, FIN, RST, PSH, URG).",
+        "keywords": [
+          "segment",
+          "header",
+          "sequence",
+          "number"
+        ]
+      },
+      {
+        "q": "Explain the TCP Three-Way Handshake connection establishment and Four-Way connection termination.",
+        "keywords": [
+          "three-way",
+          "handshake",
+          "connection",
+          "establishment"
+        ]
+      },
+      {
+        "q": "Explain TCP sliding window flow control and how the Receiver Window (rwnd) prevents buffer overflow.",
+        "keywords": [
+          "sliding",
+          "window",
+          "flow",
+          "control"
+        ]
+      },
+      {
+        "q": "Describe TCP Congestion Control mechanisms: Slow Start, Congestion Avoidance, Fast Retransmit, and Fast Recovery.",
+        "keywords": [
+          "congestion",
+          "control",
+          "mechanisms",
+          "slow"
+        ]
+      },
+      {
+        "q": "Explain the Domain Name System (DNS) architecture: root servers, TLD servers, authoritative servers, recursive vs iterative queries.",
+        "keywords": [
+          "domain",
+          "name",
+          "system",
+          "dns"
+        ]
+      },
+      {
+        "q": "Describe the Hypertext Transfer Protocol (HTTP): HTTP/1.0 vs HTTP/1.1 persistent connections vs HTTP/2 multiplexing.",
+        "keywords": [
+          "hypertext",
+          "transfer",
+          "protocol",
+          "http"
+        ]
+      },
+      {
+        "q": "How does the File Transfer Protocol (FTP) use separate control (port 21) and data (port 20) connections?",
+        "keywords": [
+          "file",
+          "transfer",
+          "protocol",
+          "ftp"
+        ]
+      },
+      {
+        "q": "Describe email protocols: SMTP (push), POP3 (pull), and IMAP (interactive remote mailbox sync).",
+        "keywords": [
+          "email",
+          "protocols",
+          "smtp",
+          "push"
+        ]
+      }
+    ],
+    "DL module 1.pdf": [
+      {
+        "q": "What is Deep Learning and how does representation learning differ from traditional machine learning?",
+        "keywords": [
+          "deep",
+          "learning",
+          "representation",
+          "learning"
+        ]
+      },
+      {
+        "q": "Describe the biological neuron and its mathematical abstraction: the McCulloch-Pitts Perceptron.",
+        "keywords": [
+          "biological",
+          "neuron",
+          "mathematical",
+          "abstraction"
+        ]
+      },
+      {
+        "q": "Why can a single-layer perceptron not solve the XOR problem?",
+        "keywords": [
+          "single-layer",
+          "perceptron",
+          "solve",
+          "problem"
+        ]
+      },
+      {
+        "q": "What is a Multi-Layer Perceptron (MLP) and what is the role of hidden layers?",
+        "keywords": [
+          "multi-layer",
+          "perceptron",
+          "mlp",
+          "hidden"
+        ]
+      },
+      {
+        "q": "Explain the Sigmoid activation function, its mathematical definition, and why it causes vanishing gradients.",
+        "keywords": [
+          "sigmoid",
+          "activation",
+          "function",
+          "mathematical"
+        ]
+      },
+      {
+        "q": "Explain the Hyperbolic Tangent (Tanh) activation function and compare its zero-centered output with Sigmoid.",
+        "keywords": [
+          "hyperbolic",
+          "tangent",
+          "tanh",
+          "activation"
+        ]
+      },
+      {
+        "q": "Explain the Rectified Linear Unit (ReLU) activation function and its computational benefits.",
+        "keywords": [
+          "rectified",
+          "linear",
+          "unit",
+          "relu"
+        ]
+      },
+      {
+        "q": "What is the \"Dying ReLU\" problem and how do Leaky ReLU and Parametric ReLU (PReLU) address it?",
+        "keywords": [
+          "dying",
+          "relu",
+          "problem",
+          "leaky"
+        ]
+      },
+      {
+        "q": "Describe Loss Functions for neural networks: Mean Squared Error (MSE) for regression vs Binary Cross-Entropy for classification.",
+        "keywords": [
+          "loss",
+          "functions",
+          "neural",
+          "networks"
+        ]
+      },
+      {
+        "q": "What is the Softmax activation function and how does it convert raw model logits into probability distributions?",
+        "keywords": [
+          "softmax",
+          "activation",
+          "function",
+          "convert"
+        ]
+      }
+    ],
+    "DL module 2.pdf": [
+      {
+        "q": "Explain the Backpropagation algorithm and how the Chain Rule of calculus computes partial derivatives.",
+        "keywords": [
+          "backpropagation",
+          "algorithm",
+          "chain",
+          "rule"
+        ]
+      },
+      {
+        "q": "What are the mathematical causes of Vanishing Gradients and Exploding Gradients during backpropagation?",
+        "keywords": [
+          "mathematical",
+          "causes",
+          "vanishing",
+          "gradients"
+        ]
+      },
+      {
+        "q": "How does gradient clipping prevent exploding gradients during deep network training?",
+        "keywords": [
+          "gradient",
+          "clipping",
+          "prevent",
+          "exploding"
+        ]
+      },
+      {
+        "q": "Explain weight initialization strategies: Xavier (Glorot) initialization vs He initialization.",
+        "keywords": [
+          "weight",
+          "initialization",
+          "strategies",
+          "xavier"
+        ]
+      },
+      {
+        "q": "Describe Stochastic Gradient Descent (SGD) and compare it with Batch Gradient Descent and Mini-Batch SGD.",
+        "keywords": [
+          "stochastic",
+          "gradient",
+          "descent",
+          "sgd"
+        ]
+      },
+      {
+        "q": "What is Momentum in gradient descent and how does it accelerate through ravines and dampen oscillations?",
+        "keywords": [
+          "momentum",
+          "gradient",
+          "descent",
+          "accelerate"
+        ]
+      },
+      {
+        "q": "Explain the RMSprop optimization algorithm and how exponentially decaying average of squared gradients adapts learning rates.",
+        "keywords": [
+          "rmsprop",
+          "optimization",
+          "algorithm",
+          "exponentially"
+        ]
+      },
+      {
+        "q": "Describe the Adam (Adaptive Moment Estimation) optimizer and how it combines Momentum and RMSprop.",
+        "keywords": [
+          "adam",
+          "adaptive",
+          "moment",
+          "estimation"
+        ]
+      },
+      {
+        "q": "Explain Learning Rate Schedules (step decay, exponential decay, cosine annealing) and warmup strategies.",
+        "keywords": [
+          "learning",
+          "rate",
+          "schedules",
+          "step"
+        ]
+      },
+      {
+        "q": "What is the problem of saddle points and local minima in non-convex deep learning loss landscapes?",
+        "keywords": [
+          "problem",
+          "saddle",
+          "points",
+          "local"
+        ]
+      }
+    ],
+    "DL module 3.pdf": [
+      {
+        "q": "What is the Convolution operation in image processing and how is it computed using kernels/filters?",
+        "keywords": [
+          "convolution",
+          "operation",
+          "image",
+          "processing"
+        ]
+      },
+      {
+        "q": "Explain the fundamental principles of CNNs: local receptive fields, shared weights, and spatial subsampling.",
+        "keywords": [
+          "fundamental",
+          "principles",
+          "cnns",
+          "local"
+        ]
+      },
+      {
+        "q": "Define Stride and Padding (Valid vs Same padding) and show the formula to calculate output spatial dimensions.",
+        "keywords": [
+          "stride",
+          "padding",
+          "valid",
+          "same"
+        ]
+      },
+      {
+        "q": "What is a Feature Map and how do multiple channels capture hierarchical visual abstractions?",
+        "keywords": [
+          "feature",
+          "multiple",
+          "channels",
+          "capture"
+        ]
+      },
+      {
+        "q": "Explain the role of Pooling Layers: Max Pooling versus Average Pooling.",
+        "keywords": [
+          "pooling",
+          "layers",
+          "pooling",
+          "versus"
+        ]
+      },
+      {
+        "q": "Describe the architecture and historical significance of LeNet-5.",
+        "keywords": [
+          "architecture",
+          "historical",
+          "significance",
+          "lenet-5"
+        ]
+      },
+      {
+        "q": "What breakthroughs did AlexNet introduce (ReLU, Dropout, GPU training, data augmentation)?",
+        "keywords": [
+          "breakthroughs",
+          "alexnet",
+          "introduce",
+          "relu"
+        ]
+      },
+      {
+        "q": "Describe the VGG Network architecture and why stacking small 3 \\times 3 filters is superior to large filters.",
+        "keywords": [
+          "network",
+          "architecture",
+          "stacking",
+          "small"
+        ]
+      },
+      {
+        "q": "Explain ResNet (Residual Networks) and how residual skip connections (F(x) + x) enable training networks of 100+ layers.",
+        "keywords": [
+          "resnet",
+          "residual",
+          "networks",
+          "residual"
+        ]
+      },
+      {
+        "q": "Describe Inception Networks (GoogLeNet) and how 1 \\times 1 convolutions perform dimensionality reduction.",
+        "keywords": [
+          "inception",
+          "networks",
+          "googlenet",
+          "times"
+        ]
+      }
+    ],
+    "DL module 4.pdf": [
+      {
+        "q": "What is sequential data and why are standard feedforward networks inadequate for modeling variable-length sequences?",
+        "keywords": [
+          "sequential",
+          "data",
+          "standard",
+          "feedforward"
+        ]
+      },
+      {
+        "q": "Explain the architecture of a standard Recurrent Neural Network (RNN) and its hidden state recurrence formula.",
+        "keywords": [
+          "architecture",
+          "standard",
+          "recurrent",
+          "neural"
+        ]
+      },
+      {
+        "q": "What is Backpropagation Through Time (BPTT) and how does unfolding the computational graph over time steps work?",
+        "keywords": [
+          "backpropagation",
+          "through",
+          "time",
+          "bptt"
+        ]
+      },
+      {
+        "q": "Explain why standard RNNs suffer severely from vanishing and exploding gradients over long sequences.",
+        "keywords": [
+          "standard",
+          "rnns",
+          "suffer",
+          "severely"
+        ]
+      },
+      {
+        "q": "Describe the Long Short-Term Memory (LSTM) network and explain the role of its constant-error carousel (Cell State).",
+        "keywords": [
+          "long",
+          "short-term",
+          "memory",
+          "lstm"
+        ]
+      },
+      {
+        "q": "Explain the three gates of an LSTM cell: Forget Gate, Input Gate, and Output Gate.",
+        "keywords": [
+          "three",
+          "gates",
+          "lstm",
+          "cell"
+        ]
+      },
+      {
+        "q": "Describe the Gated Recurrent Unit (GRU) and how it simplifies LSTM by combining cell state and hidden state.",
+        "keywords": [
+          "gated",
+          "recurrent",
+          "unit",
+          "gru"
+        ]
+      },
+      {
+        "q": "What is a Bidirectional RNN and why is seeing both past and future context advantageous in NLP tasks?",
+        "keywords": [
+          "bidirectional",
+          "seeing",
+          "both",
+          "past"
+        ]
+      },
+      {
+        "q": "Describe Sequence-to-Sequence (Seq2Seq) encoder-decoder architectures used in machine translation.",
+        "keywords": [
+          "sequence-to-sequence",
+          "seq2seq",
+          "encoder-decoder",
+          "architectures"
+        ]
+      },
+      {
+        "q": "What is Teacher Forcing during RNN training and what is the exposure bias dilemma?",
+        "keywords": [
+          "teacher",
+          "forcing",
+          "during",
+          "training"
+        ]
+      }
+    ],
+    "DL module 5.pdf": [
+      {
+        "q": "What is Overfitting in deep models and how does it manifest in training vs validation loss curves?",
+        "keywords": [
+          "overfitting",
+          "deep",
+          "models",
+          "manifest"
+        ]
+      },
+      {
+        "q": "Explain L_1 and L_2 Weight Regularization (Weight Decay) and how they constrain parameter weights.",
+        "keywords": [
+          "weight",
+          "regularization",
+          "weight",
+          "decay"
+        ]
+      },
+      {
+        "q": "Describe the Dropout technique and explain why it acts as an implicit ensemble of sub-networks.",
+        "keywords": [
+          "dropout",
+          "technique",
+          "acts",
+          "implicit"
+        ]
+      },
+      {
+        "q": "Explain Batch Normalization: mathematical formulation during training and inference, and why it speeds up convergence.",
+        "keywords": [
+          "batch",
+          "normalization",
+          "mathematical",
+          "formulation"
+        ]
+      },
+      {
+        "q": "What is Layer Normalization and why is it preferred over Batch Normalization in NLP and sequence models?",
+        "keywords": [
+          "layer",
+          "normalization",
+          "preferred",
+          "over"
+        ]
+      },
+      {
+        "q": "Describe Autoencoders: encoder architecture, latent bottleneck representation, and reconstruction loss.",
+        "keywords": [
+          "autoencoders",
+          "encoder",
+          "architecture",
+          "latent"
+        ]
+      },
+      {
+        "q": "What are Variational Autoencoders (VAEs) and explain the reparameterization trick.",
+        "keywords": [
+          "variational",
+          "autoencoders",
+          "vaes",
+          "reparameterization"
+        ]
+      },
+      {
+        "q": "Explain Generative Adversarial Networks (GANs): Generator vs Discriminator minimax game objective.",
+        "keywords": [
+          "generative",
+          "adversarial",
+          "networks",
+          "gans"
+        ]
+      },
+      {
+        "q": "What was the motivation for the Attention Mechanism in sequence models to overcome the fixed-vector encoder bottleneck?",
+        "keywords": [
+          "motivation",
+          "attention",
+          "mechanism",
+          "sequence"
+        ]
+      },
+      {
+        "q": "Describe Scaled Dot-Product Attention: Query (Q), Key (K), Value (V), and the self-attention equation.",
+        "keywords": [
+          "scaled",
+          "dot-product",
+          "attention",
+          "query"
+        ]
+      }
+    ]
+  },
+  "phase_3": {
+    "SE Module 1.pdf": [
+      {
+        "q": "Define Software Engineering and explain the causes of the historic \"Software Crisis\".",
+        "keywords": [
+          "software",
+          "engineering",
+          "causes",
+          "historic",
+          "software",
+          "crisis"
+        ]
+      },
+      {
+        "q": "What are software characteristics that distinguish software from traditional industrial manufacturing products?",
+        "keywords": [
+          "software",
+          "characteristics",
+          "distinguish",
+          "software",
+          "traditional",
+          "industrial"
+        ]
+      },
+      {
+        "q": "Describe the Classical Waterfall Model, its sequential stages, and explain why late-stage requirement changes are costly.",
+        "keywords": [
+          "classical",
+          "waterfall",
+          "model",
+          "sequential",
+          "stages",
+          "late-stage"
+        ]
+      },
+      {
+        "q": "Explain the Prototyping Model and describe scenarios where throwaway prototypes are necessary.",
+        "keywords": [
+          "prototyping",
+          "model",
+          "scenarios",
+          "throwaway",
+          "prototypes",
+          "necessary"
+        ]
+      },
+      {
+        "q": "Describe the Spiral Model and explain why it is described as risk-driven.",
+        "keywords": [
+          "spiral",
+          "model",
+          "described",
+          "risk-driven"
+        ]
+      },
+      {
+        "q": "What is the Agile Manifesto and what are its four core values compared to plan-driven models?",
+        "keywords": [
+          "agile",
+          "manifesto",
+          "four",
+          "core",
+          "values",
+          "compared"
+        ]
+      },
+      {
+        "q": "Describe the Scrum Framework: Product Owner, Scrum Master, Development Team, Sprint, Backlog, and Daily Standup.",
+        "keywords": [
+          "scrum",
+          "framework",
+          "product",
+          "owner",
+          "scrum",
+          "master"
+        ]
+      },
+      {
+        "q": "What is Extreme Programming (XP) and describe its core practices (Pair Programming, Test-Driven Development).",
+        "keywords": [
+          "extreme",
+          "programming",
+          "core",
+          "practices",
+          "pair",
+          "programming"
+        ]
+      },
+      {
+        "q": "Explain the Rational Unified Process (RUP) and its four phases: Inception, Elaboration, Construction, Transition.",
+        "keywords": [
+          "rational",
+          "unified",
+          "process",
+          "four",
+          "phases",
+          "inception"
+        ]
+      },
+      {
+        "q": "Compare the Waterfall model with Agile development across project size, requirement stability, and customer involvement.",
+        "keywords": [
+          "waterfall",
+          "model",
+          "agile",
+          "development",
+          "project",
+          "size"
+        ]
+      }
+    ],
+    "SE Module 2.pdf": [
+      {
+        "q": "What is Requirements Engineering and what are the activities involved in the requirements process?",
+        "keywords": [
+          "requirements",
+          "engineering",
+          "activities",
+          "involved",
+          "requirements",
+          "process"
+        ]
+      },
+      {
+        "q": "Differentiate between Functional Requirements and Non-Functional Requirements (NFRs) with concrete examples.",
+        "keywords": [
+          "differentiate",
+          "functional",
+          "requirements",
+          "non-functional",
+          "requirements",
+          "nfrs"
+        ]
+      },
+      {
+        "q": "What is Requirement Elicitation and describe techniques: Interviews, Surveys, Workshops, Brainstorming, and Observation.",
+        "keywords": [
+          "requirement",
+          "elicitation",
+          "techniques",
+          "interviews",
+          "surveys",
+          "workshops"
+        ]
+      },
+      {
+        "q": "What is a Software Requirements Specification (SRS) document and what qualities (unambiguous, complete, verifiable) must it possess?",
+        "keywords": [
+          "software",
+          "requirements",
+          "specification",
+          "document",
+          "qualities",
+          "unambiguous"
+        ]
+      },
+      {
+        "q": "Explain the IEEE 830 standard structure for an SRS document.",
+        "keywords": [
+          "ieee",
+          "standard",
+          "structure",
+          "document"
+        ]
+      },
+      {
+        "q": "What is Requirement Validation and describe methods like requirements reviews, prototyping, and test-case generation.",
+        "keywords": [
+          "requirement",
+          "validation",
+          "methods",
+          "like",
+          "requirements",
+          "reviews"
+        ]
+      },
+      {
+        "q": "Explain Requirement Traceability and how a Traceability Matrix maps requirements to design, code, and test cases.",
+        "keywords": [
+          "requirement",
+          "traceability",
+          "traceability",
+          "matrix",
+          "maps",
+          "requirements"
+        ]
+      },
+      {
+        "q": "What is Requirement Creep (Scope Creep) and how does change impact analysis prevent project derailment?",
+        "keywords": [
+          "requirement",
+          "creep",
+          "scope",
+          "creep",
+          "does",
+          "change"
+        ]
+      },
+      {
+        "q": "Describe Use Case Modeling: Actors, Use Cases, System Boundary, and include vs extend relationships.",
+        "keywords": [
+          "modeling",
+          "actors",
+          "cases",
+          "system",
+          "boundary",
+          "include"
+        ]
+      },
+      {
+        "q": "What is Feasibility Study and describe its dimensions: Technical, Economic, Operational, Legal, and Schedule feasibility.",
+        "keywords": [
+          "feasibility",
+          "study",
+          "dimensions",
+          "technical",
+          "economic",
+          "operational"
+        ]
+      }
+    ],
+    "SE Module 3.pdf": [
+      {
+        "q": "What is Software Design and explain the transition from \"what\" (analysis) to \"how\" (design).",
+        "keywords": [
+          "software",
+          "design",
+          "transition",
+          "analysis",
+          "design"
+        ]
+      },
+      {
+        "q": "Differentiate between Architectural Design, High-Level Design, and Detailed Design.",
+        "keywords": [
+          "differentiate",
+          "architectural",
+          "design",
+          "high-level",
+          "design",
+          "detailed"
+        ]
+      },
+      {
+        "q": "What is Modularity and explain why decomposing complex systems into independent modules is advantageous?",
+        "keywords": [
+          "modularity",
+          "decomposing",
+          "complex",
+          "systems",
+          "independent",
+          "modules"
+        ]
+      },
+      {
+        "q": "Define Cohesion and explain its levels: Coincidental, Logical, Temporal, Procedural, Communicational, Sequential, and Functional.",
+        "keywords": [
+          "cohesion",
+          "levels",
+          "coincidental",
+          "logical",
+          "temporal",
+          "procedural"
+        ]
+      },
+      {
+        "q": "Define Coupling and explain its levels: Content, Common, Control, Stamp, and Data coupling.",
+        "keywords": [
+          "coupling",
+          "levels",
+          "content",
+          "common",
+          "control",
+          "stamp"
+        ]
+      },
+      {
+        "q": "Why is \"High Cohesion and Low Coupling\" the universal golden rule of software architecture?",
+        "keywords": [
+          "high",
+          "cohesion",
+          "coupling",
+          "universal",
+          "golden",
+          "rule"
+        ]
+      },
+      {
+        "q": "Explain Information Hiding and Data Abstraction as fundamental software design principles.",
+        "keywords": [
+          "information",
+          "hiding",
+          "data",
+          "abstraction",
+          "software",
+          "design"
+        ]
+      },
+      {
+        "q": "Describe Object-Oriented Design principles (SOLID principles: Single responsibility, Open-closed, Liskov, Interface segregation, Dependency inversion).",
+        "keywords": [
+          "object-oriented",
+          "design",
+          "principles",
+          "solid",
+          "principles",
+          "single"
+        ]
+      },
+      {
+        "q": "What is UML (Unified Modeling Language) and differentiate Structural Diagrams (Class, Component) versus Behavioral Diagrams (Sequence, Activity).",
+        "keywords": [
+          "unified",
+          "modeling",
+          "language",
+          "differentiate",
+          "structural",
+          "diagrams"
+        ]
+      },
+      {
+        "q": "Explain Architectural Styles: Layered (n-tier), Client-Server, Microservices, and Event-Driven architecture.",
+        "keywords": [
+          "architectural",
+          "styles",
+          "layered",
+          "n-tier",
+          "client-server",
+          "microservices"
+        ]
+      }
+    ],
+    "SE Module 4.pdf": [
+      {
+        "q": "Define Software Testing and differentiate between Fault (Defect/Bug), Failure, and Error.",
+        "keywords": [
+          "software",
+          "testing",
+          "differentiate",
+          "fault",
+          "defect",
+          "failure"
+        ]
+      },
+      {
+        "q": "What is the difference between Software Verification (\"Are we building the product right?\") and Validation (\"Are we building the right product?\")?",
+        "keywords": [
+          "software",
+          "verification",
+          "building",
+          "product",
+          "right",
+          "validation"
+        ]
+      },
+      {
+        "q": "Describe the V-Model and show how each testing phase correlates with a development phase.",
+        "keywords": [
+          "v-model",
+          "show",
+          "testing",
+          "phase",
+          "correlates",
+          "development"
+        ]
+      },
+      {
+        "q": "Explain Black-Box Testing (Functional Testing) and describe Equivalence Class Partitioning.",
+        "keywords": [
+          "black-box",
+          "testing",
+          "functional",
+          "testing",
+          "equivalence",
+          "class"
+        ]
+      },
+      {
+        "q": "What is Boundary Value Analysis (BVA) and why do software errors cluster heavily at input boundaries?",
+        "keywords": [
+          "boundary",
+          "value",
+          "analysis",
+          "software",
+          "errors",
+          "cluster"
+        ]
+      },
+      {
+        "q": "Explain White-Box Testing (Structural Testing) and describe Statement Coverage, Branch Coverage, and Condition Coverage.",
+        "keywords": [
+          "white-box",
+          "testing",
+          "structural",
+          "testing",
+          "statement",
+          "coverage"
+        ]
+      },
+      {
+        "q": "What is Basis Path Testing and how is McCabe's Cyclomatic Complexity calculated ($V(G) = E - N + 2P$)?",
+        "keywords": [
+          "basis",
+          "path",
+          "testing",
+          "mccabe",
+          "cyclomatic",
+          "complexity"
+        ]
+      },
+      {
+        "q": "Differentiate between Unit Testing, Integration Testing (Top-Down, Bottom-Up, Big Bang), and System Testing.",
+        "keywords": [
+          "differentiate",
+          "unit",
+          "testing",
+          "integration",
+          "testing",
+          "top-down"
+        ]
+      },
+      {
+        "q": "What is Regression Testing and why is automated test suite execution critical during continuous changes?",
+        "keywords": [
+          "regression",
+          "testing",
+          "automated",
+          "test",
+          "suite",
+          "execution"
+        ]
+      },
+      {
+        "q": "Describe Alpha Testing and Beta Testing and their roles in user acceptance testing (UAT).",
+        "keywords": [
+          "alpha",
+          "testing",
+          "beta",
+          "testing",
+          "roles",
+          "user"
+        ]
+      }
+    ],
+    "SE Module 5.pdf": [
+      {
+        "q": "What is Software Maintenance and explain its four categories: Corrective, Adaptive, Perfective, and Preventive.",
+        "keywords": [
+          "software",
+          "maintenance",
+          "four",
+          "categories",
+          "corrective",
+          "adaptive"
+        ]
+      },
+      {
+        "q": "What is Software Configuration Management (SCM) and why is baseline control essential?",
+        "keywords": [
+          "software",
+          "configuration",
+          "management",
+          "baseline",
+          "control"
+        ]
+      },
+      {
+        "q": "Explain the core activities of SCM: Configuration Identification, Version Control, Change Control, Configuration Auditing.",
+        "keywords": [
+          "core",
+          "activities",
+          "configuration",
+          "identification",
+          "version",
+          "control"
+        ]
+      },
+      {
+        "q": "What is a Software Quality Assurance (SQA) plan and describe formal technical reviews (FTR) and code inspections.",
+        "keywords": [
+          "software",
+          "quality",
+          "assurance",
+          "plan",
+          "formal",
+          "technical"
+        ]
+      },
+      {
+        "q": "Describe ISO 9001 and SEI CMM (Capability Maturity Model) and explain the 5 levels of CMM (Initial, Repeatable, Defined, Managed, Optimizing).",
+        "keywords": [
+          "9001",
+          "capability",
+          "maturity",
+          "model",
+          "levels",
+          "initial"
+        ]
+      },
+      {
+        "q": "What is Software Project Management and describe the triple constraint: Scope, Time, and Cost.",
+        "keywords": [
+          "software",
+          "project",
+          "management",
+          "triple",
+          "constraint",
+          "scope"
+        ]
+      },
+      {
+        "q": "Explain Software Cost Estimation: LOC (Lines of Code) and Function Point (FP) analysis.",
+        "keywords": [
+          "software",
+          "cost",
+          "estimation",
+          "lines",
+          "code",
+          "function"
+        ]
+      },
+      {
+        "q": "Describe the COCOMO (Constructive Cost Model) model: Basic, Intermediate, and Detailed COCOMO for Organic, Semidetached, and Embedded systems.",
+        "keywords": [
+          "cocomo",
+          "constructive",
+          "cost",
+          "model",
+          "model",
+          "basic"
+        ]
+      },
+      {
+        "q": "What is Software Risk Management? Explain Risk Identification, Risk Projection, Risk Mitigation, Monitoring, and Management (RMMM) plan.",
+        "keywords": [
+          "software",
+          "risk",
+          "management",
+          "risk",
+          "identification",
+          "risk"
+        ]
+      },
+      {
+        "q": "Describe project scheduling tools: Work Breakdown Structure (WBS), Gantt Charts, and PERT/CPM critical path analysis.",
+        "keywords": [
+          "project",
+          "scheduling",
+          "tools",
+          "breakdown",
+          "structure",
+          "gantt"
+        ]
+      }
+    ],
+    "oops's with java Module 1.pdf": [
+      {
+        "q": "What is Object-Oriented Programming and contrast it with Procedure-Oriented Programming.",
+        "keywords": [
+          "object-oriented",
+          "programming",
+          "procedure-oriented",
+          "programming"
+        ]
+      },
+      {
+        "q": "Explain the fundamental principles of OOP: Encapsulation, Abstraction, Inheritance, and Polymorphism.",
+        "keywords": [
+          "principles",
+          "encapsulation",
+          "abstraction",
+          "inheritance",
+          "polymorphism"
+        ]
+      },
+      {
+        "q": "What is a Class and what is an Object in Java? How does memory allocation work using the `new` operator?",
+        "keywords": [
+          "class",
+          "object",
+          "java",
+          "does",
+          "memory",
+          "allocation"
+        ]
+      },
+      {
+        "q": "Explain Primitive Data Types in Java and their memory sizes (byte, short, int, long, float, double, char, boolean).",
+        "keywords": [
+          "primitive",
+          "data",
+          "types",
+          "java",
+          "memory",
+          "sizes"
+        ]
+      },
+      {
+        "q": "What is type casting in Java? Differentiate between Implicit (Widening) and Explicit (Narrowing) casting.",
+        "keywords": [
+          "type",
+          "casting",
+          "java",
+          "differentiate",
+          "implicit",
+          "widening"
+        ]
+      },
+      {
+        "q": "Describe Java control statements: Selection statements (`if-else`, `switch`), Iteration statements (`for`, `while`, `do-while`), Jump statements (`break`, `continue`, `return`).",
+        "keywords": [
+          "java",
+          "control",
+          "statements",
+          "statements",
+          "if-else",
+          "switch"
+        ]
+      },
+      {
+        "q": "How does the enhanced `for-each` loop work in Java arrays?",
+        "keywords": [
+          "does",
+          "enhanced",
+          "for-each",
+          "loop",
+          "java",
+          "arrays"
+        ]
+      },
+      {
+        "q": "Explain one-dimensional and two-dimensional array declaration, instantiation, and initialization in Java.",
+        "keywords": [
+          "one-dimensional",
+          "two-dimensional",
+          "array",
+          "declaration",
+          "instantiation",
+          "initialization"
+        ]
+      },
+      {
+        "q": "What are command-line arguments in Java and how does `public static void main(String[] args)` receive them?",
+        "keywords": [
+          "command-line",
+          "arguments",
+          "java",
+          "does",
+          "public",
+          "static"
+        ]
+      },
+      {
+        "q": "Explain Java's automatic Garbage Collection philosophy and why Java eliminates explicit pointers.",
+        "keywords": [
+          "java",
+          "automatic",
+          "garbage",
+          "collection",
+          "philosophy",
+          "java"
+        ]
+      }
+    ],
+    "oops's with java Module 2.pdf": [
+      {
+        "q": "What is a method in Java and describe its signature, return types, and parameter passing mechanisms.",
+        "keywords": [
+          "method",
+          "java",
+          "signature",
+          "return",
+          "types",
+          "parameter"
+        ]
+      },
+      {
+        "q": "Explain Call by Value versus Call by Reference in Java, and prove why Java is strictly Call by Value.",
+        "keywords": [
+          "call",
+          "value",
+          "call",
+          "reference",
+          "java",
+          "prove"
+        ]
+      },
+      {
+        "q": "What is a Constructor in Java? Differentiate between Default Constructors and Parameterized Constructors.",
+        "keywords": [
+          "constructor",
+          "java",
+          "differentiate",
+          "default",
+          "constructors",
+          "parameterized"
+        ]
+      },
+      {
+        "q": "What is Constructor Overloading and how is it used to initialize objects in multiple ways?",
+        "keywords": [
+          "constructor",
+          "overloading",
+          "initialize",
+          "objects",
+          "multiple",
+          "ways"
+        ]
+      },
+      {
+        "q": "Explain the `this` keyword and its uses: resolving instance variable shadowing and constructor chaining (`this()`).",
+        "keywords": [
+          "keyword",
+          "uses",
+          "resolving",
+          "instance",
+          "variable",
+          "shadowing"
+        ]
+      },
+      {
+        "q": "What is Method Overloading and what are the rules regarding parameter types, counts, and return types?",
+        "keywords": [
+          "method",
+          "overloading",
+          "rules",
+          "regarding",
+          "parameter",
+          "types"
+        ]
+      },
+      {
+        "q": "Explain the `static` keyword: static variables (class variables), static methods, and static initialization blocks.",
+        "keywords": [
+          "static",
+          "keyword",
+          "static",
+          "variables",
+          "class",
+          "variables"
+        ]
+      },
+      {
+        "q": "What restrictions apply to `static` methods (cannot access non-static members directly, cannot use `this` or `super`)?",
+        "keywords": [
+          "restrictions",
+          "apply",
+          "static",
+          "methods",
+          "cannot",
+          "access"
+        ]
+      },
+      {
+        "q": "Describe the `finalize()` method in Java and explain when the garbage collector invokes it.",
+        "keywords": [
+          "finalize",
+          "method",
+          "java",
+          "garbage",
+          "collector",
+          "invokes"
+        ]
+      },
+      {
+        "q": "What are inner classes (nested classes) in Java and how do static nested classes differ from non-static inner classes?",
+        "keywords": [
+          "inner",
+          "classes",
+          "nested",
+          "classes",
+          "java",
+          "static"
+        ]
+      }
+    ],
+    "oops's with java Module 3.pdf": [
+      {
+        "q": "What is Inheritance in Java and explain single, multilevel, and hierarchical inheritance models.",
+        "keywords": [
+          "inheritance",
+          "java",
+          "single",
+          "multilevel",
+          "hierarchical",
+          "inheritance"
+        ]
+      },
+      {
+        "q": "Why does Java not support multiple inheritance with classes?",
+        "keywords": [
+          "does",
+          "java",
+          "support",
+          "multiple",
+          "inheritance",
+          "classes"
+        ]
+      },
+      {
+        "q": "Explain the `super` keyword and its uses: accessing superclass members and invoking superclass constructors (`super()`).",
+        "keywords": [
+          "super",
+          "keyword",
+          "uses",
+          "accessing",
+          "superclass",
+          "members"
+        ]
+      },
+      {
+        "q": "What is Method Overriding in Java and what are the rules regarding method names, signatures, and access levels?",
+        "keywords": [
+          "method",
+          "overriding",
+          "java",
+          "rules",
+          "regarding",
+          "method"
+        ]
+      },
+      {
+        "q": "Explain Dynamic Method Dispatch (Runtime Polymorphism) in Java with an inheritance hierarchy.",
+        "keywords": [
+          "dynamic",
+          "method",
+          "dispatch",
+          "runtime",
+          "polymorphism",
+          "java"
+        ]
+      },
+      {
+        "q": "What is an Abstract Class and an Abstract Method? What are the rules regarding abstract class instantiation?",
+        "keywords": [
+          "abstract",
+          "class",
+          "abstract",
+          "method",
+          "rules",
+          "regarding"
+        ]
+      },
+      {
+        "q": "Explain the `final` keyword in Java: final variables (constants), final methods (prevent overriding), and final classes (prevent inheritance).",
+        "keywords": [
+          "final",
+          "keyword",
+          "java",
+          "final",
+          "variables",
+          "constants"
+        ]
+      },
+      {
+        "q": "Describe the `Object` class in Java and explain its key methods: `toString()`, `equals()`, `hashCode()`, `getClass()`.",
+        "keywords": [
+          "object",
+          "class",
+          "java",
+          "methods",
+          "tostring",
+          "equals"
+        ]
+      },
+      {
+        "q": "Explain the difference between compile-time polymorphism (overloading) and runtime polymorphism (overriding).",
+        "keywords": [
+          "compile-time",
+          "polymorphism",
+          "overloading",
+          "runtime",
+          "polymorphism",
+          "overriding"
+        ]
+      },
+      {
+        "q": "What is downcasting versus upcasting in Java object references and how is the `instanceof` operator used safely?",
+        "keywords": [
+          "downcasting",
+          "upcasting",
+          "java",
+          "object",
+          "references",
+          "instanceof"
+        ]
+      }
+    ],
+    "oops's with java Module 4.pdf": [
+      {
+        "q": "What is a Package in Java and explain how packages provide namespace management and access protection.",
+        "keywords": [
+          "package",
+          "java",
+          "packages",
+          "provide",
+          "namespace",
+          "management"
+        ]
+      },
+      {
+        "q": "How do you create and import user-defined packages in Java?",
+        "keywords": [
+          "create",
+          "import",
+          "user-defined",
+          "packages",
+          "java"
+        ]
+      },
+      {
+        "q": "Explain the four access protection specifiers in Java: `public`, `protected`, default (package-private), and `private`.",
+        "keywords": [
+          "four",
+          "access",
+          "protection",
+          "specifiers",
+          "java",
+          "public"
+        ]
+      },
+      {
+        "q": "What is an Interface in Java and explain how interfaces achieve 100% abstraction and multiple inheritance.",
+        "keywords": [
+          "interface",
+          "java",
+          "interfaces",
+          "achieve",
+          "abstraction",
+          "multiple"
+        ]
+      },
+      {
+        "q": "What are the rules for defining variables and methods in a standard Java interface?",
+        "keywords": [
+          "rules",
+          "defining",
+          "variables",
+          "methods",
+          "standard",
+          "java"
+        ]
+      },
+      {
+        "q": "How does a class implement multiple interfaces and resolve method name collisions?",
+        "keywords": [
+          "does",
+          "class",
+          "implement",
+          "multiple",
+          "interfaces",
+          "resolve"
+        ]
+      },
+      {
+        "q": "Explain Interface Inheritance: how can one interface extend another interface using the `extends` keyword?",
+        "keywords": [
+          "interface",
+          "inheritance",
+          "interface",
+          "extend",
+          "another",
+          "interface"
+        ]
+      },
+      {
+        "q": "What are Default Methods and Static Methods in interfaces (introduced in Java 8) and why were they added?",
+        "keywords": [
+          "default",
+          "methods",
+          "static",
+          "methods",
+          "interfaces",
+          "introduced"
+        ]
+      },
+      {
+        "q": "What is a Marker Interface (Tagging Interface) with examples like `Serializable` and `Cloneable`?",
+        "keywords": [
+          "marker",
+          "interface",
+          "tagging",
+          "interface",
+          "examples",
+          "like"
+        ]
+      },
+      {
+        "q": "Compare an Abstract Class with an Interface across inheritance, constructor presence, state storage, and performance.",
+        "keywords": [
+          "abstract",
+          "class",
+          "interface",
+          "inheritance",
+          "constructor",
+          "presence"
+        ]
+      }
+    ],
+    "oops's with java Module 5.pdf": [
+      {
+        "q": "What is an Exception in Java and explain the Java Exception Hierarchy rooted at `java.lang.Throwable`.",
+        "keywords": [
+          "exception",
+          "java",
+          "java",
+          "exception",
+          "hierarchy",
+          "rooted"
+        ]
+      },
+      {
+        "q": "Differentiate between Checked Exceptions (compile-time) and Unchecked Exceptions (runtime).",
+        "keywords": [
+          "differentiate",
+          "checked",
+          "exceptions",
+          "compile-time",
+          "unchecked",
+          "exceptions"
+        ]
+      },
+      {
+        "q": "Explain the five keywords in Java exception handling: `try`, `catch`, `finally`, `throw`, and `throws`.",
+        "keywords": [
+          "five",
+          "keywords",
+          "java",
+          "exception",
+          "handling",
+          "catch"
+        ]
+      },
+      {
+        "q": "How do multiple `catch` blocks work and what is the rule regarding the order of subclass vs superclass exceptions?",
+        "keywords": [
+          "multiple",
+          "catch",
+          "blocks",
+          "rule",
+          "regarding",
+          "order"
+        ]
+      },
+      {
+        "q": "What is the role of the `finally` block and under what rare circumstances does `finally` not execute?",
+        "keywords": [
+          "finally",
+          "block",
+          "rare",
+          "circumstances",
+          "does",
+          "finally"
+        ]
+      },
+      {
+        "q": "How do you define and instantiate a custom (user-defined) Exception class in Java?",
+        "keywords": [
+          "instantiate",
+          "custom",
+          "user-defined",
+          "exception",
+          "class",
+          "java"
+        ]
+      },
+      {
+        "q": "What is Multithreading and differentiate between process-based multitasking and thread-based multitasking.",
+        "keywords": [
+          "multithreading",
+          "differentiate",
+          "process-based",
+          "multitasking",
+          "thread-based",
+          "multitasking"
+        ]
+      },
+      {
+        "q": "Describe the Thread Life Cycle in Java: New, Runnable, Running, Blocked/Waiting, and Terminated states.",
+        "keywords": [
+          "thread",
+          "life",
+          "cycle",
+          "java",
+          "runnable",
+          "running"
+        ]
+      },
+      {
+        "q": "Explain the two ways of creating threads in Java: extending `Thread` class vs implementing `Runnable` interface.",
+        "keywords": [
+          "ways",
+          "creating",
+          "threads",
+          "java",
+          "extending",
+          "thread"
+        ]
+      },
+      {
+        "q": "What is Thread Synchronization, why do race conditions occur, and how does the `synchronized` keyword (methods/blocks) prevent them?",
+        "keywords": [
+          "thread",
+          "synchronization",
+          "race",
+          "conditions",
+          "occur",
+          "does"
+        ]
+      }
+    ],
+    "Complete JAVA.pdf": [
+      {
+        "q": "Describe the Java Virtual Machine (JVM) architecture: ClassLoader, Memory Areas (Heap, Stack, Method Area), and Execution Engine (JIT).",
+        "keywords": [
+          "java",
+          "virtual",
+          "machine",
+          "architecture",
+          "classloader",
+          "memory"
+        ]
+      },
+      {
+        "q": "What is the Java Memory Model (JMM) and how does thread memory cache interact with the main memory heap?",
+        "keywords": [
+          "java",
+          "memory",
+          "model",
+          "does",
+          "thread",
+          "memory"
+        ]
+      },
+      {
+        "q": "Explain the Java Collections Framework (JCF) hierarchy: `Collection`, `List`, `Set`, `Queue`, and `Map`.",
+        "keywords": [
+          "java",
+          "collections",
+          "framework",
+          "hierarchy",
+          "collection",
+          "list"
+        ]
+      },
+      {
+        "q": "Compare `ArrayList` versus `LinkedList` in terms of internal data structure, search time, and insertion/deletion time complexity.",
+        "keywords": [
+          "arraylist",
+          "linkedlist",
+          "terms",
+          "internal",
+          "data",
+          "structure"
+        ]
+      },
+      {
+        "q": "Compare `HashSet`, `LinkedHashSet`, and `TreeSet` across ordering guarantees, uniqueness, and underlying data structures.",
+        "keywords": [
+          "hashset",
+          "linkedhashset",
+          "treeset",
+          "ordering",
+          "guarantees",
+          "uniqueness"
+        ]
+      },
+      {
+        "q": "Explain the `HashMap` internal architecture: hashing, buckets, collision handling via linked lists, and treeification in Java 8.",
+        "keywords": [
+          "hashmap",
+          "internal",
+          "architecture",
+          "hashing",
+          "buckets",
+          "collision"
+        ]
+      },
+      {
+        "q": "What is the contract between `equals()` and `hashCode()` methods in Java and what happens when it is violated?",
+        "keywords": [
+          "contract",
+          "equals",
+          "hashcode",
+          "methods",
+          "java",
+          "happens"
+        ]
+      },
+      {
+        "q": "Describe Java Generics: type parameters ($<T>$), bounded type parameters, and wildcards ($?$ extends, $?$ super).",
+        "keywords": [
+          "java",
+          "generics",
+          "type",
+          "parameters",
+          "bounded",
+          "type"
+        ]
+      },
+      {
+        "q": "Explain Java I/O Streams: Byte Streams (`InputStream`/`OutputStream`) versus Character Streams (`Reader`/`Writer`).",
+        "keywords": [
+          "java",
+          "streams",
+          "byte",
+          "streams",
+          "inputstream",
+          "outputstream"
+        ]
+      },
+      {
+        "q": "What are Lambda Expressions and Functional Interfaces (`Predicate`, `Function`, `Consumer`, `Supplier`) in modern Java?",
+        "keywords": [
+          "lambda",
+          "expressions",
+          "functional",
+          "interfaces",
+          "predicate",
+          "function"
+        ]
+      },
+      {
+        "q": "Describe the Java Stream API and distinguish between intermediate operations (`filter`, `map`) and terminal operations (`collect`, `forEach`).",
+        "keywords": [
+          "java",
+          "stream",
+          "distinguish",
+          "intermediate",
+          "operations",
+          "filter"
+        ]
+      },
+      {
+        "q": "What are Wrapper Classes in Java and explain Autoboxing and Unboxing.",
+        "keywords": [
+          "wrapper",
+          "classes",
+          "java",
+          "autoboxing",
+          "unboxing"
+        ]
+      }
+    ],
+    "Indian Constitution Notes - All Modules.pdf": [
+      {
+        "q": "Describe the historical background and the role of the Constituent Assembly in drafting the Indian Constitution.",
+        "keywords": [
+          "historical",
+          "background",
+          "constituent",
+          "assembly",
+          "drafting",
+          "indian"
+        ]
+      },
+      {
+        "q": "Explain the Preamble to the Indian Constitution and its key philosophical ideals: Sovereign, Socialist, Secular, Democratic, Republic, Justice, Liberty, Equality, Fraternity.",
+        "keywords": [
+          "preamble",
+          "indian",
+          "constitution",
+          "philosophical",
+          "ideals",
+          "sovereign"
+        ]
+      },
+      {
+        "q": "What are Fundamental Rights under Part III of the Constitution (Articles 12 to 35)?",
+        "keywords": [
+          "rights",
+          "part",
+          "constitution",
+          "articles"
+        ]
+      },
+      {
+        "q": "Explain Article 14 (Right to Equality) and Article 21 (Protection of Life and Personal Liberty) and their expansive judicial interpretations.",
+        "keywords": [
+          "article",
+          "right",
+          "equality",
+          "article",
+          "protection",
+          "life"
+        ]
+      },
+      {
+        "q": "What are Constitutional Remedies under Article 32 and describe the five writs: Habeas Corpus, Mandamus, Prohibition, Certiorari, and Quo-Warranto.",
+        "keywords": [
+          "constitutional",
+          "remedies",
+          "article",
+          "five",
+          "writs",
+          "habeas"
+        ]
+      },
+      {
+        "q": "What are the Directive Principles of State Policy (DPSP) under Part IV and contrast their non-justiciable nature with Fundamental Rights.",
+        "keywords": [
+          "directive",
+          "principles",
+          "policy",
+          "dpsp",
+          "part",
+          "non-justiciable"
+        ]
+      },
+      {
+        "q": "What are Fundamental Duties under Article 51A and by which Constitutional Amendment were they incorporated?",
+        "keywords": [
+          "duties",
+          "article",
+          "constitutional",
+          "amendment",
+          "were",
+          "they"
+        ]
+      },
+      {
+        "q": "Describe the Union Executive: Election, powers, functions, and impeachment procedure of the President of India.",
+        "keywords": [
+          "union",
+          "executive",
+          "election",
+          "powers",
+          "functions",
+          "impeachment"
+        ]
+      },
+      {
+        "q": "Explain the role and executive authority of the Prime Minister and the Cabinet under the principle of collective responsibility.",
+        "keywords": [
+          "executive",
+          "authority",
+          "prime",
+          "minister",
+          "cabinet",
+          "principle"
+        ]
+      },
+      {
+        "q": "Describe the bicameral Parliament of India: Composition, powers, and legislative relationship between Lok Sabha and Rajya Sabha.",
+        "keywords": [
+          "bicameral",
+          "parliament",
+          "india",
+          "composition",
+          "powers",
+          "legislative"
+        ]
+      },
+      {
+        "q": "Explain the jurisdiction of the Supreme Court of India: Original, Appellate, Advisory, and Review jurisdictions.",
+        "keywords": [
+          "jurisdiction",
+          "supreme",
+          "court",
+          "india",
+          "original",
+          "appellate"
+        ]
+      },
+      {
+        "q": "Describe the Emergency Provisions under the Constitution: National Emergency (Article 352), State Emergency/President's Rule (Article 356), and Financial Emergency (Article 360).",
+        "keywords": [
+          "emergency",
+          "provisions",
+          "constitution",
+          "national",
+          "emergency",
+          "article"
+        ]
+      },
+      {
+        "q": "Explain the Constitutional Amendment procedure under Article 368 and the three types of majorities required.",
+        "keywords": [
+          "constitutional",
+          "amendment",
+          "procedure",
+          "article",
+          "types",
+          "majorities"
+        ]
+      },
+      {
+        "q": "What is the Doctrine of Basic Structure articulated in the landmark *Kesavananda Bharati v. State of Kerala* (1973) case?",
+        "keywords": [
+          "doctrine",
+          "basic",
+          "structure",
+          "articulated",
+          "landmark",
+          "kesavananda"
+        ]
+      },
+      {
+        "q": "Explain Indian Federalism and the distribution of legislative powers across the Union List, State List, and Concurrent List in the Seventh Schedule.",
+        "keywords": [
+          "indian",
+          "federalism",
+          "distribution",
+          "legislative",
+          "powers",
+          "union"
+        ]
+      }
+    ]
+  }
+}

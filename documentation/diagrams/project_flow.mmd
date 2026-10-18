@@ -1,0 +1,50 @@
+sequenceDiagram
+    autonumber
+    actor User
+
+    box "Frontend"
+    participant UI as index.html
+    end
+
+    box "Backend (FastAPI)"
+    participant API as app.py
+    participant RAG as retrieve.py
+    end
+
+    box "Data Ingestion"
+    participant Ingest as ingest.py
+    participant DB as ChromaDB
+    end
+
+    box "External Services"
+    participant HF as HuggingFace (Embeddings)
+    participant LLM as Gemini / NVIDIA
+    end
+
+    rect rgb(200, 255, 200)
+    Note over Ingest, DB: 1. Data Ingestion Phase (Offline)
+    Ingest->>Ingest: Read PDFs & Clean Text
+    Ingest->>Ingest: Hierarchical Chunking (Nodes)
+    Ingest->>HF: Get Embeddings for Nodes
+    HF-->>Ingest: Vector Embeddings
+    Ingest->>DB: Store Vectors & Metadata
+    end
+
+    rect rgb(200, 200, 255)
+    Note over User, LLM: 2. Retrieval & Chat Phase (Runtime)
+    User->>UI: Enter Query
+    UI->>API: POST /chat {query}
+    API->>RAG: answer_query(query)
+    RAG->>LLM: Expand Query (HyDE Prompt)
+    LLM-->>RAG: Expanded Query
+    RAG->>HF: Embed Expanded Query
+    HF-->>RAG: Query Vector
+    RAG->>DB: Vector Search (top_k=10)
+    DB-->>RAG: Retrieve Documents (Nodes)
+    RAG->>RAG: Rerank Nodes (SentenceTransformer)
+    RAG->>LLM: Prompt + Context + Original Query
+    LLM-->>RAG: Generated Answer
+    RAG-->>API: ChatResponse {answer, sources}
+    API-->>UI: JSON Response
+    UI-->>User: Display Answer & Sources
+    end

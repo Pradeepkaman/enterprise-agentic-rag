@@ -1,0 +1,43 @@
+# Python & Virtual Environments
+venv/
+.venv/
+env/
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+*.log
+
+# Environment Variables & Secrets
+.env
+.env*.local
+*.pem
+*.key
+
+# Node & Build Artifacts
+node_modules/
+dist/
+dist-ssr/
+.output/
+.tanstack/
+.nitro/
+.wrangler/
+.dev.vars
+
+# Temporary & Media Files
+*.mp4
+*.mov
+*.avi
+temp_*
+ocr_ml_cache.json
+
+# Local Storage & Source Data
+chroma_db/
+source_pdfs/
+.ipynb_checkpoints/
+
+# Operating System & IDE
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/

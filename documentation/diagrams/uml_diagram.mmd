@@ -1,0 +1,56 @@
+classDiagram
+    class IndexHTML {
+        +fetchChatResponse(query: String)
+        +displayAnswer(answer: String)
+        +displaySources(sources: List)
+    }
+
+    class ChatRequest {
+        +query: str
+    }
+
+    class ChatResponse {
+        +answer: str
+        +sources: list
+    }
+
+    class FastAPIApp {
+        +chat_endpoint(request: ChatRequest) ChatResponse
+    }
+
+    class RetrieveModule {
+        -_index: VectorStoreIndex
+        -_retriever: VectorIndexRetriever
+        -_reranker: SentenceTransformerRerank
+        +get_models() Tuple
+        +setup() VectorStoreIndex
+        +expand_query(query: str, gemini, nvidia) str
+        +call_llm(gemini, nvidia, prompt: str) str
+        +answer_query(query: str) dict
+        +main()
+    }
+
+    class IngestModule {
+        +clean_text(text: str) str
+        +parse_pdfs_to_documents(source_dir: str) List
+        +build_index()
+    }
+
+    class VectorStoreIndex
+    class ChromaVectorStore
+    class HuggingFaceEmbedding
+    class SentenceTransformerRerank
+
+    IndexHTML ..> FastAPIApp : HTTP POST
+    FastAPIApp ..> ChatRequest : uses
+    FastAPIApp ..> ChatResponse : returns
+    FastAPIApp --> RetrieveModule : calls answer_query()
+
+    RetrieveModule --> VectorStoreIndex
+    RetrieveModule --> ChromaVectorStore
+    RetrieveModule --> HuggingFaceEmbedding
+    RetrieveModule --> SentenceTransformerRerank
+
+    IngestModule --> VectorStoreIndex
+    IngestModule --> ChromaVectorStore
+    IngestModule --> HuggingFaceEmbedding

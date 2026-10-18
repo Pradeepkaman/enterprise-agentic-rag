@@ -1,0 +1,580 @@
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+/*
+ * Design system definition.
+ *
+ * The @theme inline block maps CSS custom properties to Tailwind utility
+ * classes (e.g. --color-primary -> bg-primary, text-primary).
+ *
+ * The :root and .dark blocks define the actual color values using oklch.
+ * All colors MUST use oklch format.
+ *
+ * To add a new semantic color:
+ * 1. Add the variable to :root (light value) and .dark (dark value)
+ * 2. Register it in @theme inline as --color-<name>: var(--<name>)
+ */
+
+@theme inline {
+  --font-sans: "JetBrains Mono", ui-monospace, monospace;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+  --font-display: "JetBrains Mono", ui-monospace, monospace;
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 8px);
+  --radius-3xl: calc(var(--radius) + 12px);
+  --radius-4xl: calc(var(--radius) + 16px);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-ring-offset-background: var(--background);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-panel: var(--panel);
+  --color-panel-strong: var(--panel-strong);
+  --color-coral: var(--coral);
+  --color-cyan: var(--cyan);
+  --color-success: var(--success);
+  --color-chat-user: var(--chat-user);
+  --color-chat-user-foreground: var(--chat-user-foreground);
+  --color-dot: var(--dot);
+  --shadow-soft: var(--shadow-soft);
+}
+
+:root {
+  --radius: 0.5rem;
+  --background: oklch(0.98 0 0);
+  --foreground: oklch(0.16 0 0);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.16 0 0);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.16 0 0);
+  --primary: oklch(0.16 0 0);
+  --primary-foreground: oklch(0.985 0 0);
+  --secondary: oklch(0.955 0 0);
+  --secondary-foreground: oklch(0.2 0 0);
+  --muted: oklch(0.955 0 0);
+  --muted-foreground: oklch(0.5 0 0);
+  --accent: oklch(0.94 0 0);
+  --accent-foreground: oklch(0.16 0 0);
+  --destructive: oklch(0.35 0 0);
+  --destructive-foreground: oklch(0.98 0 0);
+  --border: oklch(0.9 0 0);
+  --input: oklch(0.9 0 0);
+  --ring: oklch(0.16 0 0);
+  --panel: oklch(0.965 0 0);
+  --panel-strong: oklch(0.935 0 0);
+  --coral: oklch(0.2 0 0);
+  --cyan: oklch(0.45 0 0);
+  --success: oklch(0.32 0 0);
+  --chat-user: oklch(0.16 0 0);
+  --chat-user-foreground: oklch(0.985 0 0);
+  --chart-1: oklch(0.25 0 0);
+  --chart-2: oklch(0.4 0 0);
+  --chart-3: oklch(0.55 0 0);
+  --chart-4: oklch(0.7 0 0);
+  --chart-5: oklch(0.85 0 0);
+  --sidebar: oklch(0.98 0 0);
+  --sidebar-foreground: oklch(0.16 0 0);
+  --sidebar-primary: oklch(0.16 0 0);
+  --sidebar-primary-foreground: oklch(0.985 0 0);
+  --sidebar-accent: oklch(0.94 0 0);
+  --sidebar-accent-foreground: oklch(0.16 0 0);
+  --sidebar-border: oklch(0.9 0 0);
+  --sidebar-ring: oklch(0.16 0 0);
+  --dot: oklch(0.84 0 0);
+  --shadow-soft: 0 1px 2px oklch(0 0 0 / 4%), 0 4px 16px -6px oklch(0 0 0 / 6%);
+}
+
+.dark {
+  --background: oklch(0.13 0 0);
+  --foreground: oklch(0.96 0 0);
+  --card: oklch(0.17 0 0);
+  --card-foreground: oklch(0.96 0 0);
+  --popover: oklch(0.19 0 0);
+  --popover-foreground: oklch(0.96 0 0);
+  --primary: oklch(0.96 0 0);
+  --primary-foreground: oklch(0.13 0 0);
+  --secondary: oklch(0.23 0 0);
+  --secondary-foreground: oklch(0.96 0 0);
+  --muted: oklch(0.23 0 0);
+  --muted-foreground: oklch(0.65 0 0);
+  --accent: oklch(0.26 0 0);
+  --accent-foreground: oklch(0.96 0 0);
+  --destructive: oklch(0.72 0 0);
+  --destructive-foreground: oklch(0.13 0 0);
+  --border: oklch(0.28 0 0);
+  --input: oklch(0.28 0 0);
+  --ring: oklch(0.85 0 0);
+  --panel: oklch(0.155 0 0);
+  --panel-strong: oklch(0.19 0 0);
+  --coral: oklch(0.96 0 0);
+  --cyan: oklch(0.72 0 0);
+  --success: oklch(0.85 0 0);
+  --chat-user: oklch(0.96 0 0);
+  --chat-user-foreground: oklch(0.15 0 0);
+  --chart-1: oklch(0.35 0 0);
+  --chart-2: oklch(0.5 0 0);
+  --chart-3: oklch(0.65 0 0);
+  --chart-4: oklch(0.78 0 0);
+  --chart-5: oklch(0.9 0 0);
+  --sidebar: oklch(0.155 0 0);
+  --sidebar-foreground: oklch(0.96 0 0);
+  --sidebar-primary: oklch(0.96 0 0);
+  --sidebar-primary-foreground: oklch(0.13 0 0);
+  --sidebar-accent: oklch(0.23 0 0);
+  --sidebar-accent-foreground: oklch(0.96 0 0);
+  --sidebar-border: oklch(1 0 0 / 10%);
+  --sidebar-ring: oklch(0.85 0 0);
+  --dot: oklch(0.3 0 0);
+  --shadow-soft: 0 1px 2px oklch(0 0 0 / 30%), 0 6px 20px -8px oklch(0 0 0 / 50%);
+}
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+  *::-webkit-scrollbar {
+    display: none;
+  }
+
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-sans);
+    letter-spacing: 0;
+    overflow: hidden;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-display);
+    letter-spacing: -0.02em;
+  }
+}
+
+@keyframes signal-flow { to { stroke-dashoffset: -24; } }
+@keyframes node-breathe { 50% { opacity: .4; transform: scale(.72); } }
+@keyframes scan { 0% { transform: translateY(-120%); } 100% { transform: translateY(520%); } }
+
+@utility animate-signal { animation: signal-flow 1.2s linear infinite; }
+@utility animate-node { animation: node-breathe 2s ease-in-out infinite; transform-origin: center; }
+@utility animate-scan { animation: scan 4s ease-in-out infinite; }
+
+@utility scrollbar-hide { -ms-overflow-style: none; scrollbar-width: none; &::-webkit-scrollbar { display: none; } }
+
+@utility dot-grid {
+  background-image: radial-gradient(var(--dot) 1px, transparent 1px);
+  background-size: 18px 18px;
+}
+@utility dot-grid-drift {
+  animation: grid-drift 40s linear infinite;
+}
+@utility micro-label {
+  font-size: 0.625rem;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  color: var(--muted-foreground);
+}
+@utility enter-up {
+  animation: enter-up 0.6s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+}
+@utility shake {
+  animation: shake 0.42s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+}
+@utility pulse-dot {
+  animation: pulse-dot 1s ease-in-out infinite;
+}
+@utility caret-blink {
+  animation: caret-blink 1s step-end infinite;
+}
+@keyframes grid-drift { from { background-position: 0 0; } to { background-position: 180px 180px; } }
+@keyframes enter-up { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: none; } }
+@keyframes shake { 20%,60% { transform: translateX(-6px); } 40%,80% { transform: translateX(6px); } }
+@keyframes pulse-dot { 0%,100% { transform: scale(1); opacity: 1; } 50% { transform: scale(0.6); opacity: 0.5; } }
+@keyframes caret-blink { 50% { opacity: 0; } }
+
+.magic-card {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  border: 1px solid transparent;
+  background:
+    linear-gradient(var(--card), var(--card)) padding-box,
+    radial-gradient(240px circle at var(--magic-x, -240px) var(--magic-y, -240px), var(--cyan) 0%, color-mix(in srgb, var(--coral) 55%, transparent) 45%, var(--border) 100%) border-box;
+  transition: background 180ms ease, box-shadow 0.25s ease;
+}
+
+.magic-card::before {
+  position: absolute;
+  z-index: 0;
+  inset: 1px;
+  border-radius: inherit;
+  background: radial-gradient(240px circle at var(--magic-x, -240px) var(--magic-y, -240px), color-mix(in srgb, var(--cyan) 10%, transparent) 0%, transparent 100%);
+  content: "";
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 240ms ease;
+}
+
+.magic-card:hover::before {
+  opacity: 1;
+}
+
+.magic-card__content {
+  position: relative;
+  z-index: 1;
+}
+
+@property --specular-x {
+  syntax: "<length-percentage>";
+  inherits: false;
+  initial-value: 50%;
+}
+
+@property --specular-y {
+  syntax: "<length-percentage>";
+  inherits: false;
+  initial-value: 50%;
+}
+
+.specular-button {
+  --specular-x: 50%;
+  --specular-y: 50%;
+  position: relative;
+  isolation: isolate;
+  overflow: visible;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  border: 1px solid color-mix(in srgb, currentColor 25%, transparent);
+  color: var(--primary-foreground);
+  background: var(--primary);
+  box-shadow: inset 0 1px 0 color-mix(in srgb, currentColor 10%, transparent), 0 8px 24px -14px rgb(0 0 0 / 45%);
+  transition: --specular-x 120ms ease-out, --specular-y 120ms ease-out, transform 180ms ease;
+}
+
+.specular-button::before {
+  position: absolute;
+  z-index: 0;
+  inset: 0;
+  border-radius: inherit;
+  background: radial-gradient(150px circle at var(--specular-x) var(--specular-y), color-mix(in srgb, currentColor 15%, transparent), transparent 78%);
+  content: "";
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 180ms ease;
+}
+
+.specular-button::after {
+  position: absolute;
+  z-index: 0;
+  inset: 0;
+  border: 1px solid transparent;
+  border-radius: inherit;
+  background: radial-gradient(130px circle at var(--specular-x) var(--specular-y), color-mix(in srgb, currentColor 90%, transparent), color-mix(in srgb, currentColor 10%, transparent) 42%, transparent 76%) border-box;
+  content: "";
+  opacity: 0;
+  pointer-events: none;
+  mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+  mask-composite: exclude;
+  transition: opacity 180ms ease;
+}
+
+.specular-button:hover::before,
+.specular-button:hover::after,
+.specular-button:focus-visible::before,
+.specular-button:focus-visible::after {
+  opacity: 1;
+}
+
+.specular-button:active {
+  transform: scale(0.985);
+}
+
+.specular-button:disabled {
+  cursor: default;
+  opacity: 0.7;
+}
+
+.specular-button__glare {
+  position: absolute;
+  z-index: 1;
+  inset: -16px;
+  pointer-events: none;
+}
+
+.specular-button__label {
+  position: relative;
+  z-index: 2;
+  display: inline-flex;
+  align-items: center;
+  gap: inherit;
+}
+
+@utility fx-scan { animation: fx-scan 14s ease-in-out infinite; }
+@utility fx-node { animation: fx-node 4s ease-in-out infinite; }
+@utility fx-ring { animation: fx-ring 4s ease-out infinite; opacity: 0; }
+@utility fx-token { top: 100%; opacity: 0; animation: fx-token 30s linear infinite; }
+@keyframes fx-scan { 0% { transform: translateY(0); opacity: 0; } 10%, 90% { opacity: 1; } 100% { transform: translateY(100vh); opacity: 0; } }
+@keyframes fx-node { 0%, 100% { transform: scale(1); opacity: 0.5; } 50% { transform: scale(1.6); opacity: 1; } }
+@keyframes fx-ring { 0% { transform: scale(0.2); opacity: 0.8; } 70%, 100% { transform: scale(1.6); opacity: 0; } }
+@keyframes fx-token { 0% { transform: translateY(0); opacity: 0; } 8% { opacity: 0.9; } 85% { opacity: 0.9; } 100% { transform: translateY(-115vh); opacity: 0; } }
+
+/* --- AI Phosphor Streaming & Horizon Shimmer Animations --- */
+
+@keyframes phosphor-pulse {
+  0%, 100% {
+    opacity: 1;
+    transform: scaleY(1);
+    box-shadow: 0 0 10px oklch(0.7 0.18 200 / 0.9), 0 0 22px oklch(0.7 0.18 200 / 0.5);
+  }
+  50% {
+    opacity: 0.25;
+    transform: scaleY(0.8);
+    box-shadow: 0 0 4px oklch(0.7 0.18 200 / 0.3);
+  }
+}
+
+@keyframes horizon-sweep {
+  0% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  20% {
+    opacity: 1;
+  }
+  80% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+}
+
+.ai-stream-active {
+  position: relative;
+  border-left: 2px solid var(--cyan);
+  padding-left: 0.85rem;
+  background: linear-gradient(
+    90deg,
+    color-mix(in srgb, var(--cyan) 5%, transparent) 0%,
+    transparent 100%
+  );
+  box-shadow: inset 3px 0 14px -3px color-mix(in srgb, var(--cyan) 30%, transparent);
+  border-radius: 0 0.5rem 0.5rem 0;
+  transition: all 0.3s ease;
+}
+
+.ai-stream-active :last-child::after {
+  content: "";
+  display: inline-block;
+  vertical-align: -0.12em;
+  width: 0.55rem;
+  height: 1.15em;
+  margin-left: 0.35rem;
+  border-radius: 2px;
+  background-color: var(--cyan);
+  animation: phosphor-pulse 0.9s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  box-shadow: 0 0 10px oklch(0.7 0.18 200 / 0.9), 0 0 20px oklch(0.7 0.18 200 / 0.4);
+}
+
+.horizon-shimmer-sweep {
+  position: relative;
+  overflow: hidden;
+  border-radius: 0.5rem;
+}
+
+.horizon-shimmer-sweep::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    color-mix(in srgb, var(--cyan) 25%, transparent) 50%,
+    transparent 100%
+  );
+  pointer-events: none;
+  animation: horizon-sweep 1.25s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+/* --- Vector Pulse Graph Styles --- */
+
+@keyframes pulse-flow {
+  0% {
+    stroke-dashoffset: 20;
+  }
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
+.vector-wire-live {
+  stroke: var(--cyan);
+  stroke-dasharray: 6 3;
+  animation: pulse-flow 0.65s linear infinite;
+  filter: drop-shadow(0 0 4px var(--cyan));
+}
+
+.vector-wire-done {
+  stroke: color-mix(in oklab, var(--cyan) 65%, var(--border));
+  stroke-width: 1.5;
+  filter: drop-shadow(0 0 2px color-mix(in oklab, var(--cyan) 30%, transparent));
+}
+
+.vector-wire-idle {
+  stroke: var(--border);
+  stroke-dasharray: 3 3;
+  opacity: 0.5;
+}
+
+/* --- Dynamic Cursor Spotlight for Cards & Inputs --- */
+
+.spotlight-card {
+  position: relative;
+  isolation: isolate;
+  border: 1px solid transparent !important;
+  background:
+    linear-gradient(var(--card), var(--card)) padding-box,
+    radial-gradient(
+      var(--spotlight-r, 280px) circle at var(--spotlight-x, -350px) var(--spotlight-y, -350px),
+      var(--cyan) 0%,
+      color-mix(in srgb, var(--cyan) 40%, var(--border)) 45%,
+      var(--border) 100%
+    ) border-box !important;
+  transition: box-shadow 0.25s ease;
+}
+
+.spotlight-card::before {
+  content: "";
+  position: absolute;
+  z-index: 0;
+  inset: 1px;
+  border-radius: inherit;
+  background: radial-gradient(
+    var(--spotlight-r, 280px) circle at var(--spotlight-x, -350px) var(--spotlight-y, -350px),
+    color-mix(in srgb, var(--cyan) 8%, transparent) 0%,
+    transparent 100%
+  );
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+.spotlight-card:hover::before,
+.spotlight-card:focus-within::before {
+  opacity: 1;
+}
+
+.spotlight-card:focus-within {
+  box-shadow: 0 0 24px -4px color-mix(in srgb, var(--cyan) 25%, transparent),
+              0 8px 30px color-mix(in oklab, var(--foreground) 7%, transparent);
+}
+
+/* Spotlight for Form Inputs */
+.spotlight-input {
+  position: relative;
+  border: 1px solid transparent !important;
+  background:
+    linear-gradient(var(--card), var(--card)) padding-box,
+    radial-gradient(
+      180px circle at var(--input-x, -250px) var(--input-y, -250px),
+      var(--cyan) 0%,
+      color-mix(in srgb, var(--cyan) 35%, var(--border)) 50%,
+      var(--border) 100%
+    ) border-box !important;
+  transition: box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.spotlight-input:focus,
+.spotlight-input:hover {
+  box-shadow: 0 0 16px -3px color-mix(in srgb, var(--cyan) 35%, transparent);
+}
+
+/* --- React Bits Target Cursor --- */
+.target-cursor-root {
+  pointer-events: none;
+  position: fixed;
+  inset: 0;
+  z-index: 2147483647;
+}
+
+.target-cursor-corner {
+  position: absolute;
+  top: 0;
+  left: 0;
+  box-sizing: border-box;
+  transform-origin: top left;
+  border-style: solid;
+  border-color: var(--target-cursor-color, #ffffff);
+  will-change: transform;
+}
+
+.target-cursor-dot {
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: 9999px;
+  background-color: var(--target-cursor-color, #ffffff);
+  will-change: transform;
+}
+
+.target-cursor-label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  line-height: 1;
+  white-space: nowrap;
+  opacity: 0;
+  color: var(--target-cursor-color, #ffffff);
+  will-change: transform, opacity;
+  padding: 3px 7px;
+  border-radius: 4px;
+  background: color-mix(in srgb, var(--target-cursor-color, #ffffff) 15%, transparent);
+  border: 1px solid color-mix(in srgb, var(--target-cursor-color, #ffffff) 30%, transparent);
+  backdrop-filter: blur(6px);
+}
