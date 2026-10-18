@@ -33,7 +33,6 @@ ocr_ml_cache.json
 
 # Local Storage & Source Data
 chroma_db/
-source_pdfs/
 .ipynb_checkpoints/
 
 # Operating System & IDE
