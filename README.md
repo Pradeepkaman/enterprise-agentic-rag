@@ -1,4 +1,19 @@
+---
+title: Enterprise Agentic RAG Platform
+emoji: ⚡
+colorFrom: blue
+colorTo: indigo
+sdk: docker
+app_port: 7860
+pinned: false
+---
+
 # Enterprise Agentic RAG Platform
+
+[![Hugging Face Spaces](https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Spaces-blue)](https://huggingface.co/spaces)
+[![FastAPI](https://img.shields.io/badge/FastAPI-2.0.0-009688?logo=fastapi&logoColor=white)](https://fastapi.tiangolo.com)
+[![NVIDIA NIM](https://img.shields.io/badge/NVIDIA-NIM%20Llama%203.2-76B900?logo=nvidia&logoColor=white)](https://build.nvidia.com)
+[![Google Gemini](https://img.shields.io/badge/Google-Gemini%20Flash-4285F4?logo=google&logoColor=white)](https://ai.google.dev)
 
 An enterprise-grade, visual **Retrieval-Augmented Generation (RAG)** platform engineered for academic and enterprise research with deep research transparency, grounded claim-level verification, and sub-second retrieval speeds.
 
