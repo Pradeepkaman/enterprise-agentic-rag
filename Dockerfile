@@ -27,9 +27,11 @@ RUN pip install --no-cache-dir --upgrade pip && \
 COPY src/ ./src/
 COPY question_bank.json .
 
-# Copy source PDFs and ChromaDB vector store if present
+# Copy source PDFs
 COPY source_pdfs/ ./source_pdfs/
-COPY chroma_db/ ./chroma_db/
+
+# Automatically build ChromaDB vector store from source PDFs during build
+RUN python src/ingest.py
 
 # Ensure all files in /app are owned by user 1000
 RUN chown -R user:user /app
@@ -37,8 +39,8 @@ RUN chown -R user:user /app
 # Switch to non-root user
 USER user
 
-# Hugging Face Spaces standard listening port
-EXPOSE 7860
+# Support both Render ($PORT, default 8000/10000) and Hugging Face (7860)
+EXPOSE 8000 7860
 
-# Launch FastAPI via uvicorn listening on 0.0.0.0:7860
-CMD ["sh", "-c", "uvicorn src.app:app --host 0.0.0.0 --port ${PORT:-7860}"]
+# Launch FastAPI via uvicorn listening on 0.0.0.0:${PORT}
+CMD ["sh", "-c", "uvicorn src.app:app --host 0.0.0.0 --port ${PORT:-8000}"]

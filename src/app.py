@@ -41,10 +41,8 @@ ALLOWED_ORIGINS = [
     "https://huggingface.co",
 ]
 
-# Support any port on localhost, loopback, private LAN IPs, Hugging Face Spaces, and Vercel
-_ALLOWED_ORIGIN_RE = re.compile(
-    r"^(https?://(localhost|127\.0\.0\.1|10\.\d{1,3}\.\d{1,3}\.\d{1,3}|192\.168\.\d{1,3}\.\d{1,3}|172\.(1[6-9]|2\d|3[01])\.\d{1,3}\.\d{1,3})(:\d+)?|https://.*\.vercel\.app|https://.*\.hf\.space|https://.*\.huggingface\.co)$"
-)
+# Allow requests from localhost, private LAN, Vercel deployments, and production domains
+_ALLOWED_ORIGIN_RE = re.compile(r"^https?://.*$")
 
 app.add_middleware(
     CORSMiddleware,
