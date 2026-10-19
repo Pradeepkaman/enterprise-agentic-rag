@@ -61,14 +61,22 @@ _index = None
 _retriever = None
 _reranker = None
 
+ENABLE_RERANKER = os.environ.get("ENABLE_RERANKER", "true").lower() in ("true", "1", "yes")
+
 def get_models():
     global _index, _retriever, _reranker
     if _index is None:
         print("[System] Loading models into memory (This only happens once)...")
         _index = setup()
         _retriever = VectorIndexRetriever(index=_index, similarity_top_k=25)
-        if HAS_RERANKER:
-            _reranker = SentenceTransformerRerank(model="cross-encoder/ms-marco-MiniLM-L-2-v2", top_n=6)
+        if HAS_RERANKER and ENABLE_RERANKER:
+            try:
+                _reranker = SentenceTransformerRerank(model="cross-encoder/ms-marco-MiniLM-L-2-v2", top_n=6)
+            except Exception as e:
+                logger.warning(f"Could not load cross-encoder (running in low-memory RRF mode): {e}")
+                _reranker = None
+        else:
+            _reranker = None
     return _retriever, _reranker
 
 def setup():
