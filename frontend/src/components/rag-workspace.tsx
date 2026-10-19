@@ -822,13 +822,19 @@ export function RAGWorkspace() {
       setTimeout(() => setShimmerTurnIndex(null), 1400);
 
     } catch (error: any) {
-      const errMsg = `Error connecting to the backend: ${error.message}`;
+      console.error(`[RAG] Connection failed to ${API_BASE_URL}/chat:`, error);
+      const isRender = API_BASE_URL.includes("onrender.com");
+      const errMsg = `Error connecting to backend (${API_BASE_URL}): ${error.message}.${
+        isRender
+          ? " Note: Free Render instances sleep when inactive and take ~45s to wake up on first query. Please try again in a few seconds."
+          : ""
+      }`;
       setStreamingAnswer(errMsg);
       // Save the error as assistant turn
       const finalChatId = chatId;
       setAllChats(prev => prev.map(c => c.id === finalChatId ? { ...c, turns: [...c.turns, { role: "assistant" as const, content: errMsg }] } : c));
       setStreamingAnswer("");
-      toast.error("Failed to fetch response");
+      toast.error(`Backend unreachable (${API_BASE_URL})`);
     } finally {
       setStatus("ready");
       textareaRef.current?.focus();
