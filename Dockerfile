@@ -25,6 +25,7 @@ ENV HOME=/home/user \
 # Copy dependency specifications first to leverage Docker layer caching
 COPY requirements.txt .
 RUN pip install --no-cache-dir --upgrade pip && \
+    pip install --no-cache-dir torch --index-url https://download.pytorch.org/whl/cpu && \
     pip install --no-cache-dir -r requirements.txt
 
 # Copy application source code, PDFs, and question bank
@@ -46,5 +47,5 @@ USER user
 # Support Render ($PORT default 10000) and other cloud hosts
 EXPOSE 10000 8000 7860
 
-# Launch FastAPI via uvicorn listening on 0.0.0.0:${PORT:-10000}
-CMD ["sh", "-c", "uvicorn src.app:app --host 0.0.0.0 --port ${PORT:-10000}"]
+# Launch FastAPI via python module (reads $PORT natively with fallback to 10000)
+CMD ["python", "-m", "src.app"]
