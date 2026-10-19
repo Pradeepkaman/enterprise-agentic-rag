@@ -49,7 +49,7 @@ Add the following Environment Variables in the Vercel Project Dashboard:
 
 | Variable Name | Value | Purpose |
 | :--- | :--- | :--- |
-| `VITE_API_URL` | `https://your-rag-backend.onrender.com` (or Railway/Fly.io URL) | URL pointing to the FastAPI backend |
+| `VITE_API_URL` | `https://enterprise-agentic-rag-l0c9.onrender.com` | URL pointing to the FastAPI backend |
 | `NITRO_PRESET` | `vercel` | Optimizes Nitro for Vercel Serverless & Edge deployment |
 
 Click **Deploy**!

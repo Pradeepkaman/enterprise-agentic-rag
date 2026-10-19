@@ -587,11 +587,13 @@ function KnowledgeDialog({ sourceFiles }: { sourceFiles: string[] }) {
   );
 }
 
+const rawEnvUrl = (import.meta as any).env?.VITE_API_URL;
 const API_BASE_URL = (
-  (import.meta as any).env?.VITE_API_URL ||
-  (typeof window !== "undefined" && window.location.hostname === "localhost"
-    ? "http://127.0.0.1:8000"
-    : "https://enterprise-agentic-rag-l0c9.onrender.com")
+  (rawEnvUrl && !rawEnvUrl.includes("enterprise-agentic-rag-backend"))
+    ? rawEnvUrl
+    : (typeof window !== "undefined" && window.location.hostname === "localhost"
+        ? "http://127.0.0.1:8000"
+        : "https://enterprise-agentic-rag-l0c9.onrender.com")
 ).replace(/\/+$/, "");
 
 export function RAGWorkspace() {
