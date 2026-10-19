@@ -7,8 +7,7 @@ ENV PYTHONDONTWRITEBYTECODE=1 \
     OMP_NUM_THREADS=1 \
     TOKENIZERS_PARALLELISM=false \
     ENABLE_RERANKER=false \
-    HF_HOME=/app/model_cache \
-    PORT=8000
+    HF_HOME=/app/model_cache
 
 WORKDIR /app
 
@@ -44,8 +43,8 @@ RUN mkdir -p /app/model_cache /home/user && \
 # Switch to non-root user
 USER user
 
-# Support Render ($PORT) and other cloud hosts
-EXPOSE 8000 7860 10000
+# Support Render ($PORT default 10000) and other cloud hosts
+EXPOSE 10000 8000 7860
 
-# Launch FastAPI via uvicorn listening on 0.0.0.0:${PORT}
-CMD ["sh", "-c", "uvicorn src.app:app --host 0.0.0.0 --port ${PORT:-8000}"]
+# Launch FastAPI via uvicorn listening on 0.0.0.0:${PORT:-10000}
+CMD ["sh", "-c", "uvicorn src.app:app --host 0.0.0.0 --port ${PORT:-10000}"]
