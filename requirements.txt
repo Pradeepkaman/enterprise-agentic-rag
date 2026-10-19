@@ -12,6 +12,7 @@ llama-index-vector-stores-chroma>=0.1.0
 llama-index-embeddings-huggingface>=0.1.0
 llama-index-postprocessor-sbert-rerank>=0.1.0
 chromadb>=0.4.24
+onnxruntime>=1.17.0
 
 # Document Processing & Data
 PyMuPDF>=1.23.0

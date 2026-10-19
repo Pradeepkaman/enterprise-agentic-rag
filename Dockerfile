@@ -28,6 +28,9 @@ RUN pip install --no-cache-dir --upgrade pip && \
     pip install --no-cache-dir torch --index-url https://download.pytorch.org/whl/cpu && \
     pip install --no-cache-dir -r requirements.txt
 
+# Pre-download the ONNX embedding model for instant startup and zero-delay retrieval
+RUN python -c "from huggingface_hub import hf_hub_download; from transformers import AutoTokenizer; hf_hub_download('BAAI/bge-small-en-v1.5', 'onnx/model.onnx'); AutoTokenizer.from_pretrained('BAAI/bge-small-en-v1.5')"
+
 # Copy application source code, PDFs, and question bank
 COPY src/ ./src/
 COPY question_bank.json .

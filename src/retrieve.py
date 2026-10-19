@@ -61,7 +61,57 @@ _index = None
 _retriever = None
 _reranker = None
 
-ENABLE_RERANKER = os.environ.get("ENABLE_RERANKER", "true").lower() in ("true", "1", "yes")
+ENABLE_RERANKER = os.environ.get("ENABLE_RERANKER", "false").lower() in ("true", "1", "yes")
+
+# ─── Low-Memory ONNX Runtime Embedding Engine ───
+import numpy as np
+from llama_index.core.base.embeddings.base import BaseEmbedding
+from pydantic import PrivateAttr
+
+class OnnxBgeEmbedding(BaseEmbedding):
+    """
+    Ultra-low-memory, high-speed ONNX runtime embedding engine for BAAI/bge-small-en-v1.5.
+    Uses ~180MB RAM vs >700MB for PyTorch SentenceTransformers, preventing Render 512MB OOM crashes.
+    """
+    _tokenizer: any = PrivateAttr()
+    _session: any = PrivateAttr()
+    
+    def __init__(self, model_name: str = "BAAI/bge-small-en-v1.5", **kwargs):
+        super().__init__(model_name=model_name, **kwargs)
+        from transformers import AutoTokenizer
+        import onnxruntime as ort
+        from huggingface_hub import hf_hub_download
+        
+        opts = ort.SessionOptions()
+        opts.intra_op_num_threads = 1
+        opts.inter_op_num_threads = 1
+        opts.execution_mode = ort.ExecutionMode.ORT_SEQUENTIAL
+        
+        self._tokenizer = AutoTokenizer.from_pretrained(model_name)
+        onnx_path = hf_hub_download(model_name, "onnx/model.onnx")
+        self._session = ort.InferenceSession(onnx_path, sess_options=opts, providers=["CPUExecutionProvider"])
+    
+    def _encode(self, text: str) -> list[float]:
+        inputs = self._tokenizer(text, return_tensors="np", padding=True, truncation=True, max_length=512)
+        outputs = self._session.run(None, dict(inputs))
+        # CLS token representation (first token)
+        emb = outputs[0][:, 0]
+        norm = np.linalg.norm(emb, axis=1, keepdims=True)
+        emb = emb / np.clip(norm, a_min=1e-12, a_max=None)
+        return emb[0].tolist()
+
+    def _get_query_embedding(self, query: str) -> list[float]:
+        return self._encode(query)
+
+    def _get_text_embedding(self, text: str) -> list[float]:
+        return self._encode(text)
+
+    async def _aget_query_embedding(self, query: str) -> list[float]:
+        return self._get_query_embedding(query)
+
+    async def _aget_text_embedding(self, text: str) -> list[float]:
+        return self._get_text_embedding(text)
+
 
 def get_models():
     global _index, _retriever, _reranker
@@ -82,7 +132,13 @@ def get_models():
 def setup():
     # 1. Setup Embedding Model
     print("Loading Embedding Model...")
-    Settings.embed_model = HuggingFaceEmbedding(model_name="BAAI/bge-small-en-v1.5")
+    try:
+        import onnxruntime
+        print("Using ultra-low-memory ONNX Runtime for BAAI/bge-small-en-v1.5...")
+        Settings.embed_model = OnnxBgeEmbedding()
+    except Exception as e:
+        logger.warning(f"ONNX initialization fallback to HuggingFaceEmbedding: {e}")
+        Settings.embed_model = HuggingFaceEmbedding(model_name="BAAI/bge-small-en-v1.5")
     
     # 3. Connect to ChromaDB
     print("Connecting to ChromaDB...")
@@ -427,13 +483,13 @@ def answer_query_stream(messages: list, model: str = "nvidia"):
         gemini_client = openai.OpenAI(
             api_key=os.environ.get("GEMINI_API_KEY"),
             base_url="https://generativelanguage.googleapis.com/v1beta/openai/",
-            timeout=30.0,
+            timeout=15.0,
             max_retries=1
         )
         nvidia_client = openai.OpenAI(
             api_key=os.environ.get("NVIDIA_API_KEY"),
             base_url="https://integrate.api.nvidia.com/v1",
-            timeout=30.0,
+            timeout=15.0,
             max_retries=1
         )
         
