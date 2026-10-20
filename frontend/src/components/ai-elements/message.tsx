@@ -328,16 +328,18 @@ export const MessageResponse = memo(
     <Streamdown
       className={cn(
         "streamdown size-full [&>*:first-child]:mt-0 [&>*:last-child]:mb-0",
-        "[&_h1]:text-base [&_h1]:font-semibold [&_h1]:tracking-tight [&_h1]:text-foreground [&_h1]:mt-3 [&_h1]:mb-1.5",
-        "[&_h2]:text-sm sm:[&_h2]:text-[15px] [&_h2]:font-semibold [&_h2]:tracking-tight [&_h2]:text-foreground [&_h2]:mt-2.5 [&_h2]:mb-1",
-        "[&_h3]:text-sm [&_h3]:font-semibold [&_h3]:text-foreground [&_h3]:mt-2 [&_h3]:mb-1",
-        "[&_h4]:text-xs [&_h4]:font-semibold [&_h4]:uppercase [&_h4]:tracking-wider [&_h4]:text-muted-foreground [&_h4]:mt-1.5 [&_h4]:mb-0.5",
-        "[&_p]:text-sm sm:[&_p]:text-[14.5px] [&_p]:leading-relaxed [&_p]:my-1.5 [&_p]:text-foreground/90",
-        "[&_ul]:my-1.5 [&_ul]:pl-5 [&_ul]:list-disc [&_ul]:space-y-1",
-        "[&_ol]:my-1.5 [&_ol]:pl-5 [&_ol]:list-decimal [&_ol]:space-y-1",
-        "[&_li]:text-sm sm:[&_li]:text-[14.5px] [&_li]:leading-relaxed [&_li]:text-foreground/90",
-        "[&_strong]:font-semibold [&_strong]:text-foreground",
-        "[&_blockquote]:border-l-2 [&_blockquote]:border-border [&_blockquote]:pl-3.5 [&_blockquote]:italic [&_blockquote]:text-muted-foreground [&_blockquote]:my-2",
+        // Heading font: Style 1 (JADE LEWIS - Roman Display Serif: Cinzel / Playfair Display)
+        "[&_h1]:font-['Cinzel',serif] [&_h1]:text-base [&_h1]:font-bold [&_h1]:tracking-wide [&_h1]:text-foreground [&_h1]:mt-3.5 [&_h1]:mb-1.5",
+        "[&_h2]:font-['Cinzel',serif] [&_h2]:text-sm sm:[&_h2]:text-[15px] [&_h2]:font-bold [&_h2]:tracking-wide [&_h2]:text-foreground [&_h2]:mt-3 [&_h2]:mb-1",
+        "[&_h3]:font-['Cinzel',serif] [&_h3]:text-sm [&_h3]:font-bold [&_h3]:tracking-wide [&_h3]:text-foreground [&_h3]:mt-2.5 [&_h3]:mb-1",
+        "[&_h4]:font-['Cinzel',serif] [&_h4]:text-xs [&_h4]:font-bold [&_h4]:uppercase [&_h4]:tracking-wider [&_h4]:text-muted-foreground [&_h4]:mt-2 [&_h4]:mb-0.5",
+        // Normal content font: Style 2 (DAVE & JOHN - Editorial Reading Serif: Lora / EB Garamond)
+        "[&_p]:font-['Lora',serif] [&_p]:text-[15px] sm:[&_p]:text-[15.5px] [&_p]:leading-[1.75] [&_p]:tracking-normal [&_p]:my-2 [&_p]:text-foreground/95",
+        "[&_ul]:my-2 [&_ul]:pl-5 [&_ul]:list-disc [&_ul]:space-y-1.5",
+        "[&_ol]:my-2 [&_ol]:pl-5 [&_ol]:list-decimal [&_ol]:space-y-1.5",
+        "[&_li]:font-['Lora',serif] [&_li]:text-[15px] sm:[&_li]:text-[15.5px] [&_li]:leading-[1.75] [&_li]:tracking-normal [&_li]:text-foreground/95",
+        "[&_strong]:font-bold [&_strong]:text-foreground",
+        "[&_blockquote]:font-['Lora',serif] [&_blockquote]:border-l-2 [&_blockquote]:border-border [&_blockquote]:pl-3.5 [&_blockquote]:italic [&_blockquote]:text-muted-foreground [&_blockquote]:my-2",
         "[&_code]:font-mono [&_code]:text-xs [&_code]:bg-muted/70 [&_code]:px-1.5 [&_code]:py-0.5 [&_code]:rounded [&_code]:text-foreground",
         className
       )}

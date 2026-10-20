@@ -581,47 +581,51 @@
 
 /* ==========================================================================
    Chat Streamdown & Markdown Typography Rules
-   Ensure sleek, proportional typography for headings, lists, and paragraphs
-   matching the JetBrains Mono minimalist technical aesthetic of the workspace.
+   Heading font: Style 1 (JADE LEWIS - Roman Display Serif: Cinzel / Playfair Display)
+   Answer content font: Style 2 (DAVE & JOHN - Editorial Reading Serif: Lora / EB Garamond)
    ========================================================================== */
 
-.streamdown,
-[data-streamdown],
-.is-assistant {
-  font-family: var(--font-mono), monospace;
+/* Headings in AI response: Style 1 (JADE LEWIS - Roman Display Serif) */
+.streamdown h1,
+.streamdown h2,
+.streamdown h3,
+.streamdown h4,
+.streamdown h5,
+.streamdown h6,
+.is-assistant h1,
+.is-assistant h2,
+.is-assistant h3,
+.is-assistant h4,
+.is-assistant h5,
+.is-assistant h6 {
+  font-family: "Cinzel", "Playfair Display", "Cormorant Garamond", Georgia, serif !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.03em !important;
+  color: var(--foreground) !important;
 }
 
-/* Headings: Proportional, sleek, and never oversized */
 .streamdown h1,
 .is-assistant h1 {
-  font-size: 1.05rem !important;
-  font-weight: 600 !important;
-  line-height: 1.5 !important;
-  letter-spacing: -0.01em !important;
-  color: var(--foreground) !important;
+  font-size: 1.15rem !important;
+  line-height: 1.4 !important;
   margin-top: 1rem !important;
-  margin-bottom: 0.35rem !important;
+  margin-bottom: 0.4rem !important;
 }
 
 .streamdown h2,
 .is-assistant h2 {
-  font-size: 0.95rem !important;
-  font-weight: 600 !important;
-  line-height: 1.5 !important;
-  letter-spacing: -0.01em !important;
-  color: var(--foreground) !important;
+  font-size: 1.05rem !important;
+  line-height: 1.4 !important;
   margin-top: 0.85rem !important;
-  margin-bottom: 0.3rem !important;
+  margin-bottom: 0.35rem !important;
 }
 
 .streamdown h3,
 .is-assistant h3 {
-  font-size: 0.9rem !important;
-  font-weight: 600 !important;
-  line-height: 1.5 !important;
-  color: var(--foreground) !important;
+  font-size: 0.95rem !important;
+  line-height: 1.4 !important;
   margin-top: 0.75rem !important;
-  margin-bottom: 0.25rem !important;
+  margin-bottom: 0.3rem !important;
 }
 
 .streamdown h4,
@@ -630,22 +634,30 @@
 .is-assistant h4,
 .is-assistant h5,
 .is-assistant h6 {
-  font-size: 0.825rem !important;
-  font-weight: 600 !important;
+  font-size: 0.85rem !important;
   text-transform: uppercase !important;
-  letter-spacing: 0.04em !important;
+  letter-spacing: 0.08em !important;
   color: var(--muted-foreground) !important;
   margin-top: 0.65rem !important;
-  margin-bottom: 0.2rem !important;
+  margin-bottom: 0.25rem !important;
+}
+
+/* Normal answer content: Style 2 (DAVE & JOHN - Lora / EB Garamond) */
+.streamdown p,
+.streamdown li,
+.is-assistant p,
+.is-assistant li {
+  font-family: "Lora", "EB Garamond", "Cormorant Garamond", Georgia, serif !important;
+  font-size: 0.975rem !important;
+  line-height: 1.75 !important;
+  letter-spacing: 0.01em !important;
+  color: var(--foreground) !important;
 }
 
 .streamdown p,
 .is-assistant p {
-  font-size: 0.925rem !important;
-  line-height: 1.7 !important;
-  margin-top: 0.4rem !important;
-  margin-bottom: 0.4rem !important;
-  color: var(--foreground) !important;
+  margin-top: 0.45rem !important;
+  margin-bottom: 0.45rem !important;
 }
 
 .streamdown ul,
@@ -666,32 +678,38 @@
 
 .streamdown li,
 .is-assistant li {
-  font-size: 0.925rem !important;
-  line-height: 1.65 !important;
-  margin-top: 0.2rem !important;
-  margin-bottom: 0.2rem !important;
-  color: var(--foreground) !important;
+  margin-top: 0.25rem !important;
+  margin-bottom: 0.25rem !important;
 }
 
 .streamdown strong,
 .is-assistant strong {
-  font-weight: 600 !important;
+  font-weight: 700 !important;
   color: var(--foreground) !important;
 }
 
 .streamdown blockquote,
 .is-assistant blockquote {
+  font-family: "Lora", "EB Garamond", Georgia, serif !important;
   border-left: 2px solid var(--border) !important;
-  padding-left: 0.75rem !important;
+  padding-left: 0.85rem !important;
   margin-top: 0.5rem !important;
   margin-bottom: 0.5rem !important;
   color: var(--muted-foreground) !important;
   font-style: italic !important;
 }
 
+/* Code elements retain clean monospace font */
+.streamdown code,
+.is-assistant code,
+.streamdown pre,
+.is-assistant pre {
+  font-family: var(--font-mono), monospace !important;
+  font-size: 0.85em !important;
+}
+
 .streamdown code:not(pre code),
 .is-assistant code:not(pre code) {
-  font-size: 0.85em !important;
   background-color: var(--muted) !important;
   padding: 0.15rem 0.35rem !important;
   border-radius: var(--radius-sm) !important;
