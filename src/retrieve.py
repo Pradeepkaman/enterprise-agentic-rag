@@ -10,18 +10,8 @@ import chromadb
 
 from llama_index.core import VectorStoreIndex, StorageContext, Settings
 from llama_index.vector_stores.chroma import ChromaVectorStore
-from llama_index.embeddings.huggingface import HuggingFaceEmbedding
 from llama_index.core.retrievers import VectorIndexRetriever
-# If SentenceTransformerRerank is available, we use it, otherwise we fall back to no re-ranking for now.
-try:
-    from llama_index.postprocessor.sbert_rerank import SentenceTransformerRerank
-    HAS_RERANKER = True
-except ImportError:
-    try:
-        from llama_index.core.postprocessor import SentenceTransformerRerank
-        HAS_RERANKER = True
-    except ImportError:
-        HAS_RERANKER = False
+HAS_RERANKER = False
 
 # Load Environment Variables
 load_dotenv(override=True)
@@ -78,7 +68,7 @@ class OnnxBgeEmbedding(BaseEmbedding):
     
     def __init__(self, model_name: str = "BAAI/bge-small-en-v1.5", **kwargs):
         super().__init__(model_name=model_name, **kwargs)
-        from transformers import AutoTokenizer
+        from tokenizers import Tokenizer
         import onnxruntime as ort
         from huggingface_hub import hf_hub_download
         
@@ -86,14 +76,24 @@ class OnnxBgeEmbedding(BaseEmbedding):
         opts.intra_op_num_threads = 1
         opts.inter_op_num_threads = 1
         opts.execution_mode = ort.ExecutionMode.ORT_SEQUENTIAL
+        opts.enable_cpu_mem_arena = False
         
-        self._tokenizer = AutoTokenizer.from_pretrained(model_name)
+        tok_file = hf_hub_download(model_name, "tokenizer.json")
+        self._tokenizer = Tokenizer.from_file(tok_file)
+        self._tokenizer.enable_padding(length=512, pad_id=0, pad_token="[PAD]")
+        self._tokenizer.enable_truncation(max_length=512)
+        
         onnx_path = hf_hub_download(model_name, "onnx/model.onnx")
         self._session = ort.InferenceSession(onnx_path, sess_options=opts, providers=["CPUExecutionProvider"])
     
     def _encode(self, text: str) -> list[float]:
-        inputs = self._tokenizer(text, return_tensors="np", padding=True, truncation=True, max_length=512)
-        outputs = self._session.run(None, dict(inputs))
+        enc = self._tokenizer.encode(text)
+        feed = {
+            "input_ids": np.array([enc.ids], dtype=np.int64),
+            "attention_mask": np.array([enc.attention_mask], dtype=np.int64),
+            "token_type_ids": np.array([enc.type_ids], dtype=np.int64),
+        }
+        outputs = self._session.run(None, feed)
         # CLS token representation (first token)
         emb = outputs[0][:, 0]
         norm = np.linalg.norm(emb, axis=1, keepdims=True)
@@ -119,8 +119,9 @@ def get_models():
         print("[System] Loading models into memory (This only happens once)...")
         _index = setup()
         _retriever = VectorIndexRetriever(index=_index, similarity_top_k=25)
-        if HAS_RERANKER and ENABLE_RERANKER:
+        if ENABLE_RERANKER:
             try:
+                from llama_index.postprocessor.sbert_rerank import SentenceTransformerRerank
                 _reranker = SentenceTransformerRerank(model="cross-encoder/ms-marco-MiniLM-L-2-v2", top_n=6)
             except Exception as e:
                 logger.warning(f"Could not load cross-encoder (running in low-memory RRF mode): {e}")
@@ -138,6 +139,7 @@ def setup():
         Settings.embed_model = OnnxBgeEmbedding()
     except Exception as e:
         logger.warning(f"ONNX initialization fallback to HuggingFaceEmbedding: {e}")
+        from llama_index.embeddings.huggingface import HuggingFaceEmbedding
         Settings.embed_model = HuggingFaceEmbedding(model_name="BAAI/bge-small-en-v1.5")
     
     # 3. Connect to ChromaDB
@@ -607,11 +609,19 @@ def answer_query_stream(messages: list, model: str = "nvidia"):
         t0 = time.time()
         sub_queries = decompose_query(query, primary_client, primary_model, fallback_client, fallback_model)
         
-        # Expand each sub-query with HyDE
+        # Expand sub-queries with HyDE (parallelized if multiple)
         expanded_queries = []
-        for sq in sub_queries:
-            expanded = expand_query_hyde(sq, primary_client, primary_model, fallback_client, fallback_model)
+        if len(sub_queries) == 1:
+            expanded = expand_query_hyde(sub_queries[0], primary_client, primary_model, fallback_client, fallback_model)
             expanded_queries.append(expanded)
+        elif len(sub_queries) > 1:
+            from concurrent.futures import ThreadPoolExecutor
+            with ThreadPoolExecutor(max_workers=min(3, len(sub_queries))) as executor:
+                futures = [
+                    executor.submit(expand_query_hyde, sq, primary_client, primary_model, fallback_client, fallback_model)
+                    for sq in sub_queries[:3]
+                ]
+                expanded_queries = [f.result() for f in futures]
         
         hyde_ms = max(1, round((time.time() - t0) * 1000))
         yield {"trace": {"step": "hyde", "status": "done", "ms": hyde_ms, "data": {
@@ -643,17 +653,16 @@ def answer_query_stream(messages: list, model: str = "nvidia"):
         t0 = time.time()
         from llama_index.core import QueryBundle
         
-        # Bug 2 fix: retrieve per sub-query and merge with RRF
+        # Retrieve per sub-query and merge with RRF (deduplicating redundant searches)
         all_result_lists = []
-        for eq in expanded_queries:
-            query_bundle = QueryBundle(eq)
-            raw_nodes = retriever.retrieve(query_bundle)
-            all_result_lists.append(raw_nodes)
-        
-        # Also retrieve with original query for coverage
-        orig_bundle = QueryBundle(query)
-        orig_nodes = retriever.retrieve(orig_bundle)
-        all_result_lists.append(orig_nodes)
+        seen_queries = set()
+        for q_text in (expanded_queries + [query]):
+            cleaned_q = q_text.strip() if q_text else ""
+            if cleaned_q and cleaned_q not in seen_queries:
+                seen_queries.add(cleaned_q)
+                query_bundle = QueryBundle(cleaned_q)
+                raw_nodes = retriever.retrieve(query_bundle)
+                all_result_lists.append(raw_nodes)
         
         # Merge all results
         if len(all_result_lists) > 1:
@@ -727,7 +736,7 @@ def answer_query_stream(messages: list, model: str = "nvidia"):
         for node in unique_nodes:
             cosine_scores[id(node)] = node.score if node.score is not None else 0.0
         
-        if HAS_RERANKER and reranker and len(unique_nodes) > 0:
+        if reranker is not None and len(unique_nodes) > 0:
             reranked_nodes = reranker.postprocess_nodes(unique_nodes, query_bundle=QueryBundle(query))
         else:
             reranked_nodes = unique_nodes

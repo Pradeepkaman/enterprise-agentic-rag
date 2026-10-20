@@ -5,14 +5,15 @@ pydantic>=2.6.0
 python-dotenv>=1.0.0
 openai>=1.14.0
 
-# LlamaIndex Ecosystem & Vector Store
-llama-index>=0.10.0
+# LlamaIndex Ecosystem & Vector Store (Zero-PyTorch, Ultra-Low-Memory)
+llama-index-core>=0.10.0
 llama-index-llms-openai>=0.1.0
 llama-index-vector-stores-chroma>=0.1.0
-llama-index-embeddings-huggingface>=0.1.0
-llama-index-postprocessor-sbert-rerank>=0.1.0
 chromadb>=0.4.24
 onnxruntime>=1.17.0
+tokenizers>=0.19.0
+huggingface-hub>=0.20.0
+numpy>=1.24.0
 
 # Document Processing & Data
 PyMuPDF>=1.23.0
