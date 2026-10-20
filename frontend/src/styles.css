@@ -578,3 +578,123 @@
   border: 1px solid color-mix(in srgb, var(--target-cursor-color, #ffffff) 30%, transparent);
   backdrop-filter: blur(6px);
 }
+
+/* ==========================================================================
+   Chat Streamdown & Markdown Typography Rules
+   Ensure sleek, proportional typography for headings, lists, and paragraphs
+   matching the JetBrains Mono minimalist technical aesthetic of the workspace.
+   ========================================================================== */
+
+.streamdown,
+[data-streamdown],
+.is-assistant {
+  font-family: var(--font-mono), monospace;
+}
+
+/* Headings: Proportional, sleek, and never oversized */
+.streamdown h1,
+.is-assistant h1 {
+  font-size: 1.05rem !important;
+  font-weight: 600 !important;
+  line-height: 1.5 !important;
+  letter-spacing: -0.01em !important;
+  color: var(--foreground) !important;
+  margin-top: 1rem !important;
+  margin-bottom: 0.35rem !important;
+}
+
+.streamdown h2,
+.is-assistant h2 {
+  font-size: 0.95rem !important;
+  font-weight: 600 !important;
+  line-height: 1.5 !important;
+  letter-spacing: -0.01em !important;
+  color: var(--foreground) !important;
+  margin-top: 0.85rem !important;
+  margin-bottom: 0.3rem !important;
+}
+
+.streamdown h3,
+.is-assistant h3 {
+  font-size: 0.9rem !important;
+  font-weight: 600 !important;
+  line-height: 1.5 !important;
+  color: var(--foreground) !important;
+  margin-top: 0.75rem !important;
+  margin-bottom: 0.25rem !important;
+}
+
+.streamdown h4,
+.streamdown h5,
+.streamdown h6,
+.is-assistant h4,
+.is-assistant h5,
+.is-assistant h6 {
+  font-size: 0.825rem !important;
+  font-weight: 600 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.04em !important;
+  color: var(--muted-foreground) !important;
+  margin-top: 0.65rem !important;
+  margin-bottom: 0.2rem !important;
+}
+
+.streamdown p,
+.is-assistant p {
+  font-size: 0.925rem !important;
+  line-height: 1.7 !important;
+  margin-top: 0.4rem !important;
+  margin-bottom: 0.4rem !important;
+  color: var(--foreground) !important;
+}
+
+.streamdown ul,
+.is-assistant ul {
+  list-style-type: disc !important;
+  margin-top: 0.4rem !important;
+  margin-bottom: 0.4rem !important;
+  padding-left: 1.25rem !important;
+}
+
+.streamdown ol,
+.is-assistant ol {
+  list-style-type: decimal !important;
+  margin-top: 0.4rem !important;
+  margin-bottom: 0.4rem !important;
+  padding-left: 1.25rem !important;
+}
+
+.streamdown li,
+.is-assistant li {
+  font-size: 0.925rem !important;
+  line-height: 1.65 !important;
+  margin-top: 0.2rem !important;
+  margin-bottom: 0.2rem !important;
+  color: var(--foreground) !important;
+}
+
+.streamdown strong,
+.is-assistant strong {
+  font-weight: 600 !important;
+  color: var(--foreground) !important;
+}
+
+.streamdown blockquote,
+.is-assistant blockquote {
+  border-left: 2px solid var(--border) !important;
+  padding-left: 0.75rem !important;
+  margin-top: 0.5rem !important;
+  margin-bottom: 0.5rem !important;
+  color: var(--muted-foreground) !important;
+  font-style: italic !important;
+}
+
+.streamdown code:not(pre code),
+.is-assistant code:not(pre code) {
+  font-size: 0.85em !important;
+  background-color: var(--muted) !important;
+  padding: 0.15rem 0.35rem !important;
+  border-radius: var(--radius-sm) !important;
+  color: var(--foreground) !important;
+}
+
